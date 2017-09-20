@@ -1,6 +1,6 @@
 # ANGULAR4-PAYSTACK
 
-This is an angular module that abstracts the complexity of making payments through paystack with Angular.
+> This is an angular module that abstracts the complexity of making paystack payments with Angular.
 
 ## USAGE
 
@@ -64,3 +64,22 @@ export class AppModule {}
 |  `bearer`             | `string`       | false               |  ""                 | 
 |  `callback`           | `function`     | false               |  undefined          | A function called when transaction is successful. Returns a parameter containing unique reference
 |  `onClose`            | `function`     | false               |  undefined          | A function called when transaction is cancelled
+
+
+## Contributing
+
+Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
+
+
+## How can I thank you?
+
+Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or anywhere? Spread the word!
+
+Don't forget to [follow me on twitter](https://twitter.com/ashinzekene)!
+
+Thanks!
+Ashinze Ekene.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
