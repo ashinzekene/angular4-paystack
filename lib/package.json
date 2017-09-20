@@ -1,0 +1,42 @@
+{
+  "name": "angular4-paystack",
+  "version": "1.0.0",
+  "description": "an angular 4 module for paystack transactions",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "ngc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashinzekene/angular4-paystack.git"
+  },
+  "keywords": [
+    "angular",
+    "angular4",
+    "paystack",
+    "payments",
+    "angular2"
+  ],
+  "author": "Ashinze Ekene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashinzekene/angular4-paystack/issues"
+  },
+  "homepage": "https://github.com/ashinzekene/angular4-paystack#readme",
+  "peerDependencies": {
+    "@angular/core": "^4.4.2",
+    "@angular/common": "^4.2.4",
+    "rxjs": "^5.4.3"
+  },
+  "devDependencies": {
+    "@angular/common": "^4.4.3",
+    "@angular/compiler": "^4.2.6",
+    "@angular/compiler-cli": "^4.2.6",
+    "@angular/core": "^4.1.1",
+    "@angular/platform-server": "^4.2.6",
+    "@types/node": "7.0.10",
+    "rxjs": "^5.3.1",
+    "typescript": "^2.4.1",
+    "zone.js": "^0.8.10"
+  }
+}
