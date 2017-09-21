@@ -50,21 +50,22 @@ export class AppModule {}
 |-----------------------|----------------|---------------------|---------------------|---------------------| 
 |  `amount `            | `number`       | true                |  undefined          | Amount to withdraw (in kobo for NGN)
 |  `email `             | `string`       | true                |  undefined          | Email of subscriber/client
-|  `key`                | `string`       | true                |  undefined          | 
+|  `key`                | `string`       | true                |  undefined          | Your pubic Key from Paystack. Use test key for test mode and live key for live mode
 |  `ref`                | `string`       | true                |  undefined          | Unique reference
-|  `transaction_charge` | `number`       | false               |  0                  | 
-|  `metadata`           | `object`       | false               |  {}                 | 
+|  `transaction_charge` | `number`       | false               |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
+|  `metadata`           | `object`       | false               |  {}                 | custom details
 |  `class`              | `string`       | false               |  undefined          | A string of classes to add to the component
 |  `style`              | `object`       | false               |  undefined          | CSS stylings, eg ```{fontColor: 'red'}```
 |  `text`               | `object`       | false               |  undefined          | Text output of the component
 |  `currency`           | `string`       | false               |  "NGN"              | Transaction currency
-|  `plan`               | `string`       | false               |  ""                 | 
-|  `quantity`           | `string`       | false               |  ""                 | 
-|  `subaccount`         | `string`       | false               |  ""                 | 
-|  `bearer`             | `string`       | false               |  ""                 | 
+|  `plan`               | `string`       | false               |  ""                 | If transaction is to create a subscription to a predefined plan, provide plan code here.
+|  `quantity`           | `string`       | false               |  ""                 | Used to apply a multiple to the amount returned by the plan code above.
+|  `subaccount`         | `string`       | false               |  ""                 | The code for the subaccount that owns the payment. 
+|  `bearer`             | `string`       | false               |  ""                 | Who bears Paystack charges? account or subaccount
 |  `callback`           | `function`     | false               |  undefined          | A function called when transaction is successful. Returns a parameter containing unique reference
 |  `onClose`            | `function`     | false               |  undefined          | A function called when transaction is cancelled
 
+> For more information checkout [paystack's documentation](https://developers.paystack.co/docs/paystack-inline#section-working-with-paystack-inline)
 
 ## Contributing
 
