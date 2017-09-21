@@ -25,6 +25,7 @@
 !.vscode/extensions.json
 
 process.js
+/lib
 
 # misc
 /.sass-cache

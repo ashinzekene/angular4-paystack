@@ -4,45 +4,45 @@
 
 ## USAGE
 
-1. Install the module
-```sh
-npm install --save angular4-paystack
-```
+### 1. Install the module
+  ```sh
+  npm install --save angular4-paystack
+  ```
 
-2. Import the module
-In your `app.module.ts` import the module like so:
+### 2. Import the module
+  In your `app.module.ts` or any preferred module, import the module like so:
 
-```js
-import { NgModule } from '@angular/core'; 
+  ```js
+  import { NgModule } from '@angular/core'; 
 
-import { Angular4PaystackModule } from 'angular4-paystack';
-...
+  import { Angular4PaystackModule } from 'angular4-paystack';
+  ...
 
-@NgModule({
-  imports: [
-    ...
-    Angular4PaystackModule,
-  ]
-})
+  @NgModule({
+    imports: [
+      ...
+      Angular4PaystackModule,
+    ]
+  })
 
-export class AppModule {}
-```
+  export class AppModule {}
+  ```
 
-3. Use the component in your code
+### 3. Use the component in your code
 
-```
-  <angular4-paystack
-    [text]="'Pay with Paystack'"
-    [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-    [email]="'ashinzekene@gmail.com'"
-    [amount]="5000000"
-    [ref]="'2637458697'"
-    [class]="'btn btn-primary'"
-    (close)="paymentCancel()"
-    (callback)="paymentDone($event)"
-  >
-  </angular4-paystack>
-```
+  ```html
+    <angular4-paystack
+      [text]="'Pay with Paystack'"
+      [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
+      [email]="'ashinzekene@gmail.com'"
+      [amount]="5000000"
+      [ref]="'2637458697'"
+      [class]="'btn btn-primary'"
+      (close)="paymentCancel()"
+      (callback)="paymentDone($event)"
+    >
+    </angular4-paystack>
+  ```
 
 ## OPTIONS
 

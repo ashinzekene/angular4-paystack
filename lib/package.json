@@ -1,6 +1,6 @@
 {
   "name": "angular4-paystack",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "an angular 4 module for paystack transactions",
   "main": "index.ts",
   "scripts": {
