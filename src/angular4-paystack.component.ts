@@ -7,7 +7,7 @@ interface MyWindow extends Window {
 declare var window: MyWindow
  
 @Component({
-  selector: 'app-angular-paystack',
+  selector: 'angular4-paystack',
   template: `<button [ngClass]="class" [ngStyle]="style" (click)="pay()">{{text}}</button>`,
 })
 export class Angular4PaystackComponent implements OnInit {
