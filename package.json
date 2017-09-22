@@ -5,8 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "tsc": "ngc",
-    "try": "node insert-into-example",
-    "publish-patch": "node process && cd lib && npm version patch && npm publish"
+    "try": "node try-example",
+    "publish-patch": "npm run tsc && node process && cd lib && npm version minor && npm publish",
+    "publish-minor": "npm run tsc && node process && cd lib && npm version minor && npm publish"
   },
   "repository": {
     "type": "git",
