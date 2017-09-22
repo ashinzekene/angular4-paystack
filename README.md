@@ -9,7 +9,12 @@
   npm install --save angular4-paystack
   ```
 
-### 2. Import the module
+### 2. Reference the Paystack inline script in your index.html like so:
+  ```html
+    <script src="https://js.paystack.co/v1/inline.js"></script>  
+  ```
+
+### 3. Import the module
   In your `app.module.ts` or any preferred module, import the module like so:
 
   ```js
@@ -28,11 +33,10 @@
   export class AppModule {}
   ```
 
-### 3. Use the component in your code
+### 4. Use the component in your code
 
   ```html
     <angular4-paystack
-      [text]="'Pay with Paystack'"
       [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
       [email]="'ashinzekene@gmail.com'"
       [amount]="5000000"
@@ -40,8 +44,7 @@
       [class]="'btn btn-primary'"
       (close)="paymentCancel()"
       (callback)="paymentDone($event)"
-    >
-    </angular4-paystack>
+    >Pay with Paystack</angular4-paystack>
   ```
 
 ## OPTIONS

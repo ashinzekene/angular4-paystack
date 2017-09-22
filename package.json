@@ -4,7 +4,9 @@
   "description": "an angular 4 module for paystack transactions",
   "main": "index.ts",
   "scripts": {
-    "tsc": "ngc"
+    "tsc": "ngc",
+    "try": "node insert-into-example",
+    "publish-patch": "node process && cd lib && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
