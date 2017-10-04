@@ -38,7 +38,7 @@
   ```html
     <angular4-paystack
       [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-      [email]="'ashinzekene@gmail.com'"
+      [email]="'mailexample@mail.com'"
       [amount]="5000000"
       [ref]="'2637458697'"
       [class]="'btn btn-primary'"
@@ -55,6 +55,7 @@
 |  `email `             | `string`       | true                |  undefined          | Email of subscriber/client
 |  `key`                | `string`       | true                |  undefined          | Your pubic Key from Paystack. Use test key for test mode and live key for live mode
 |  `ref`                | `string`       | true                |  undefined          | Unique reference
+|  `callback`           | `function`     | true                |  undefined          | A function called when transaction is successful. Returns a parameter containing unique reference
 |  `transaction_charge` | `number`       | false               |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
 |  `metadata`           | `object`       | false               |  {}                 | custom details
 |  `class`              | `string`       | false               |  undefined          | A string of classes to add to the component
@@ -65,7 +66,6 @@
 |  `quantity`           | `string`       | false               |  ""                 | Used to apply a multiple to the amount returned by the plan code above.
 |  `subaccount`         | `string`       | false               |  ""                 | The code for the subaccount that owns the payment. 
 |  `bearer`             | `string`       | false               |  ""                 | Who bears Paystack charges? account or subaccount
-|  `callback`           | `function`     | false               |  undefined          | A function called when transaction is successful. Returns a parameter containing unique reference
 |  `onClose`            | `function`     | false               |  undefined          | A function called when transaction is cancelled
 
 > For more information checkout [paystack's documentation](https://developers.paystack.co/docs/paystack-inline#section-working-with-paystack-inline)

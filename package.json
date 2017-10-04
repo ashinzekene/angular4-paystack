@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/ashinzekene/angular4-paystack#readme",
   "peerDependencies": {
-    "@angular/core": "^4.4.2",
+    "@angular/core": "^4.2.2",
     "@angular/common": "^4.2.4",
     "rxjs": "^5.4.3"
   },
