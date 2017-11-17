@@ -1,12 +1,12 @@
 {
   "name": "angular4-paystack",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "an angular 4 module for paystack transactions",
   "main": "index.ts",
   "scripts": {
     "tsc": "ngc",
     "try": "node try-example",
-    "publish-patch": "npm run tsc && node process && cd lib && npm version minor && npm publish",
+    "publish-patch": "npm run tsc && node process && cd lib && npm version patch && npm publish",
     "publish-minor": "npm run tsc && node process && cd lib && npm version minor && npm publish"
   },
   "repository": {
