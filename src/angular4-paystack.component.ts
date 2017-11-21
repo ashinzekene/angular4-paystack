@@ -70,6 +70,7 @@ export class Angular4PaystackComponent implements OnInit {
   }
 
   ngAfterViewInit(){
+    // Prints Script Tag for Paystack Inline Js Script
     var s = document.createElement("script");
     s.type = "text/javascript";
     s.src = "https://js.paystack.co/v1/inline.js";
