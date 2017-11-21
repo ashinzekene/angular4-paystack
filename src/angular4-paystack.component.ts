@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 import { PaystackOptions } from "./paystack-options";
 
 interface MyWindow extends Window {
@@ -28,7 +28,7 @@ export class Angular4PaystackComponent implements OnInit {
   @Output() close: EventEmitter<string> = new EventEmitter<string>()
   @Output() callback: EventEmitter<string> = new EventEmitter<string>()
   private paystackOptions: PaystackOptions
-  constructor() {}
+  constructor(private elementRef:ElementRef) {}
 
   pay() {
     this.setUp()
@@ -67,6 +67,14 @@ export class Angular4PaystackComponent implements OnInit {
     if(this.text) {
       console.error("Paystack Text input is deprecated. Add text into textnode like so <angular4-paystack>Pay With Paystack</angular4-paystack>")      
     }
+  }
+
+  ngAfterViewInit(){
+    // Prints Script Tag for Paystack Inline Js Script
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "https://js.paystack.co/v1/inline.js";
+    this.elementRef.nativeElement.appendChild(s);
   }
 
 }
