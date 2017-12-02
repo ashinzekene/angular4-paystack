@@ -24,7 +24,7 @@ All notable changes to `angular4-paystack` will be documented in this file
 - updated readme to show that a callback is compulsory
 - corrected `@angular/core` version in peerDependency
 
-## 1.3 - 2017-12-02
+## 2.0.0 - 2017-12-02
 ### Added
 - You can now use the paystack inline embed in your angular application 
 - Added tests

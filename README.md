@@ -58,7 +58,7 @@
         [class]="'btn btn-primary'"
         (close)="paymentCancel()"
         (callback)="paymentDone($event)"
-      >Pay with Paystack</angular4-paystack-embed>
+      ></angular4-paystack-embed>
     ```
     **NOTE**
     - The payment form will be 100% of the width of wherever you put it.
