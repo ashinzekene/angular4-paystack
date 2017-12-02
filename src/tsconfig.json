@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "es2015",
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "outDir": "lib/"
+  },
+  "files": [
+    "./src/index.ts",
+    "./src/angular4-paystack.module.ts",
+    "./src/angular4-paystack.component.ts",
+    "./src/paystack-options.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "examples"
+  ],
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "genDir": "compiled",
+    "skipTemplateCodegen": true
+  }
+}
