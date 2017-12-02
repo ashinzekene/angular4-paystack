@@ -9,7 +9,7 @@ All notable changes to `angular4-paystack` will be documented in this file
 ### Changed
 - Updated ReadMe and
 ### Removed
- - removed unecessary packaged file
+- removed unecessary packaged file
 ### Fixed
 - Some minor bugs
 
@@ -23,3 +23,12 @@ All notable changes to `angular4-paystack` will be documented in this file
 ### Changed
 - updated readme to show that a callback is compulsory
 - corrected `@angular/core` version in peerDependency
+
+## 2.0.0 - 2017-12-02
+### Added
+- You can now use the paystack inline embed in your angular application 
+- Added tests
+### Changed
+- updated README to show how to use the paystack inline embed and little fixes
+### Removed
+- Text input (`(text)`) is no longer suypported for the `angular4-paystack` component. Check README for details
