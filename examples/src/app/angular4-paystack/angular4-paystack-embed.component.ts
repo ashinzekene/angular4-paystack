@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { PaystackOptions } from "./paystack-options";
 
 interface myWindow extends Window {
@@ -8,6 +8,7 @@ declare var window: Partial<myWindow>
 
 @Component({
   selector: 'angular4-paystack-embed',
+  changeDetection: ChangeDetectionStrategy.OnPush, 
   template: `<div id="paystackEmbedContainer"></div>`
 })
 

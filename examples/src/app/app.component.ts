@@ -1,4 +1,4 @@
-import { Component, ApplicationRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,11 @@ import { Component, ApplicationRef } from '@angular/core';
 })
 export class AppComponent {
   public title: string = 'app';
+  public results = {
+    name: ''
+  }
   result = ""
-  constructor(private appRef: ApplicationRef) {}
+  constructor() {}
 
   paymentDone(ref) {
     console.log(ref)
@@ -22,14 +25,18 @@ export class AppComponent {
 
   setTitle(title) {
     this.title = title
-    this.result = title
+    this.results.name = title
     console.log("setting title to ", title)
     this.resetTitle()
   }
   
   paymentCancel() {
     this.setTitle(`Payment Cancelled`)
+    console.log(this)
     console.log(this.title)
-    this.appRef.tick()
+  }
+  letMeKnow(str) {
+    this.title = "Let them know"
+    console.log("Emitter not issue")
   }
 }
