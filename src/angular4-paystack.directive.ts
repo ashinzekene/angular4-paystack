@@ -64,7 +64,7 @@ export class Angular4PaystackDirective {
       transaction_charge: this.transaction_charge || 0 ,
       bearer: this.bearer || "" ,
       callback: (res) => {
-        this.isPaying = false    
+        this.isPaying = false
         this.callback.emit(res)
       },
       onClose: () => {

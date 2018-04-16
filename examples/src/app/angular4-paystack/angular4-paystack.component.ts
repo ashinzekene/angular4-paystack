@@ -29,14 +29,16 @@ export class Angular4PaystackComponent implements OnInit {
   @Output() close: EventEmitter<string> = new EventEmitter<string>()
   @Output() callback: EventEmitter<string> = new EventEmitter<string>()
   private paystackOptions: PaystackOptions
+  private isPaying: boolean = false
   constructor() {}
 
   pay() {
     this.setUp()
-    console.log("OK payment will begin")
-    if(!this.checkInput()) return
+    if(!this.checkInput()) return;
+    if(this.isPaying) return;
     const payment = window.PaystackPop.setup(this.paystackOptions)
     payment.openIframe()
+    this.isPaying = true
   }
   checkInput(){
     if(!this.key) return console.error("Paystack key cannot be empty")
@@ -60,8 +62,14 @@ export class Angular4PaystackComponent implements OnInit {
       subaccount: this.subaccount || "" ,
       transaction_charge: this.transaction_charge || 0 ,
       bearer: this.bearer || "" ,
-      callback: (res) => this.callback.emit(res),
-      onClose: () => this.close.emit(),
+      callback: (res) => {
+        this.isPaying = false
+        this.callback.emit(res)
+      },
+      onClose: () => {
+        this.isPaying = false
+        this.close.emit()
+      },
     }
   }
   ngOnInit() {

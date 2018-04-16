@@ -28,16 +28,18 @@ export class Angular4PaystackDirective {
   @Input() style: object
   @Output() close: EventEmitter<string> = new EventEmitter<string>()
   @Output() callback: EventEmitter<string> = new EventEmitter<string>()
-  private paystackOptions: PaystackOptions  
+  private paystackOptions: PaystackOptions
+  private isPaying: boolean = false  
   constructor() {
     this.setUp()
   }
 
   pay() {
     this.setUp()
-    if(!this.checkInput()) return
+    if(!this.checkInput()) return;
     const payment = window.PaystackPop.setup(this.paystackOptions)
     payment.openIframe()
+    this.isPaying = true
   }
   checkInput(){
     if(!this.key) return console.error("ANGULAR-PAYSTACK: Paystack key cannot be empty")
@@ -61,15 +63,20 @@ export class Angular4PaystackDirective {
       subaccount: this.subaccount || "" ,
       transaction_charge: this.transaction_charge || 0 ,
       bearer: this.bearer || "" ,
-      callback: (res) => { 
+      callback: (res) => {
+        this.isPaying = false    
         this.callback.emit(res)
       },
-      onClose: () => this.close.emit(),
+      onClose: () => {
+        this.isPaying = false
+        this.close.emit()        
+      }
     }
   }
 
   @HostListener('click')
   buttonClick() {
+    if(this.isPaying) return;   
     this.pay()
   }
 }
