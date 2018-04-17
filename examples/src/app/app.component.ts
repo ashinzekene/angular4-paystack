@@ -38,5 +38,5 @@ export class AppComponent {
   letMeKnow(str) {
     this.title = "Let them know"
     console.log("Emitter not issue")
-  }
+  }  
 }

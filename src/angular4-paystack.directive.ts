@@ -9,7 +9,7 @@ interface myWindow extends Window {
 declare var window: myWindow 
 
 @Directive({
-  selector: '[angular-paystack]',
+  selector: '[angular4-paystack]',
 })
 export class Angular4PaystackDirective {
   @Input() text: string
