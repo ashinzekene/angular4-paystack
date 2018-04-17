@@ -1,4 +1,4 @@
-import { Directive, Input, Output, EventEmitter, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Directive, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { PaystackOptions } from './paystack-options';
 
 interface myWindow extends Window { 

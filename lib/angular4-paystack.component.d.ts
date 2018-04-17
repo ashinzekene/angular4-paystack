@@ -17,6 +17,7 @@ export declare class Angular4PaystackComponent implements OnInit {
     close: EventEmitter<string>;
     callback: EventEmitter<string>;
     private paystackOptions;
+    private isPaying;
     constructor();
     pay(): void;
     checkInput(): true | void;
