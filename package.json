@@ -1,13 +1,13 @@
 {
   "name": "angular4-paystack",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "an angular 4 module for paystack transactions",
   "main": "index.ts",
   "scripts": {
     "tsc": "ngc",
     "try": "node try-example",
     "deploy": "gh-pages -d examples/dist",
-    "b:deploy": "cd examples&& ng build --prod && cd .. && gh-pages -d examples/dist",
+    "b:deploy": "cd examples && ng build --prod && cd .. && gh-pages -d examples/dist",
     "publish-patch": "npm run tsc && node process && cd lib && npm version patch && npm publish",
     "publish-minor": "npm run tsc && node process && cd lib && npm version minor && npm publish"
   },

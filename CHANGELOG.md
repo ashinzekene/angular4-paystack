@@ -2,12 +2,11 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
-## 2.1.0 - UPCOMING
+## 2.1.0 - 2018-04-17
 ### Added
-- angularPaystack directive
-
+- Angular4Paystack directive
 ### Bug Fixes
-- Fixed issue when two popup showa when user clicks on button more than once
+- Fixed issue when more than one popup shows when user clicks on button more than once
 
 
 ## 2.0.0 - 2017-12-02

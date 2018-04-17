@@ -48,6 +48,20 @@
       >Pay with Paystack</angular4-paystack>
     ```
 
+  * Paystack Inline (Directive) - Loads the credit card form in an iframe that appears as a popup
+    ```html
+      <button
+        angular4-paystack
+        [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
+        [email]="'mailexample@mail.com'"
+        [amount]="5000000"
+        [ref]="'2637458697'"
+        [class]="'btn btn-primary'"
+        (close)="paymentCancel()"
+        (callback)="paymentDone($event)"
+      >Pay with Paystack</button>
+    ```
+
   * Paystack Inline Embed - Paystack Inline Embed is the latest addition to the stack, it offers a stylish Inline that loads the credit card form in a set container like it sits in your page.
     ```html
       <angular4-paystack-embed
