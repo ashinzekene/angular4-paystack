@@ -29,23 +29,21 @@
     "url": "https://github.com/ashinzekene/angular4-paystack/issues"
   },
   "homepage": "https://github.com/ashinzekene/angular4-paystack#readme",
-  "peerDependencies": {
-    "@angular/core": "^4.2.2",
-    "@angular/common": "^4.2.4",
-    "rxjs": "^5.4.3"
-  },
   "devDependencies": {
-    "@angular/common": "^4.4.3",
-    "@angular/compiler": "^4.2.6",
-    "@angular/compiler-cli": "^4.2.6",
-    "@angular/core": "^4.1.1",
-    "@angular/platform-server": "^4.2.6",
+    "@angular/common": "6.0.0",
+    "@angular/compiler": "6.0.0",
+    "@angular/compiler-cli": "6.0.0",
+    "@angular/core": "6.0.0",
     "@types/node": "7.0.10",
-    "rxjs": "^5.3.1",
-    "typescript": "^2.4.1",
-    "zone.js": "^0.8.10"
+    "rxjs": "6.1.0",
+    "typescript": "2.7.2",
+    "zone.js": "0.8.26"
   },
   "dependencies": {
-    "gh-pages": "^1.1.0"
+    "@angular/animations": "^6.0.0",
+    "@angular/cli": "^6.0.0",
+    "@angular/platform-browser": "^6.0.0",
+    "gh-pages": "^1.1.0",
+    "rxjs-compat": "^6.0.0-rc.0"
   }
 }
