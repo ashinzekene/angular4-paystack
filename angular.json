@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular4-paystack-example": {
+    "angular4-paystack-lib": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular4-paystack",
+            "outputPath": "dist/angular4-paystack-lib",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular4-paystack:build"
+            "browserTarget": "angular4-paystack-lib:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular4-paystack:build:production"
+              "browserTarget": "angular4-paystack-lib:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular4-paystack:build"
+            "browserTarget": "angular4-paystack-lib:build"
           }
         },
         "test": {
@@ -117,7 +117,7 @@
         }
       }
     },
-    "angular4Paystack": {
+    "angular4-paystack": {
       "root": "projects/angular4-paystack",
       "sourceRoot": "projects/angular4-paystack/src",
       "projectType": "library",

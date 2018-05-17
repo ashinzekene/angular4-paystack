@@ -17,8 +17,8 @@
       "dom"
     ],
     "paths": {
-      "angular4Paystack": [
-        "dist/angular4Paystack"
+      "angular4-paystack": [
+        "dist/angular4-paystack"
       ]
     }
   }
