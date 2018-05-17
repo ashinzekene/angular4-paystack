@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PaystackOptions } from "./paystack-options";
 
 interface MyWindow extends Window {
@@ -8,7 +8,6 @@ declare var window: MyWindow
  
 @Component({
   selector: 'angular4-paystack',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<button [ngClass]="class" [ngStyle]="style" (click)="pay()">{{text}}<ng-content></ng-content></button>`,
 })
 export class Angular4PaystackComponent implements OnInit {
