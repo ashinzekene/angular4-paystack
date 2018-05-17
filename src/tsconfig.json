@@ -15,19 +15,10 @@
       "es2015",
       "dom"
     ],
-    "outDir": "lib/"
+    "outDir": "docs/"
   },
-  "files": [
-    "./src/index.ts",
-    "./src/angular4-paystack-embed.component.ts",
-    "./src/angular4-paystack.component.ts",
-    "./src/angular4-paystack.directive.ts",
-    "./src/angular4-paystack.module.ts",
-    "./src/paystack-options.ts"
-  ],
   "exclude": [
-    "node_modules",
-    "examples"
+    "node_modules"
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true,

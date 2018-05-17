@@ -16,10 +16,10 @@
     [class]="'btn btn-primary btn-lg'"
     >Pay With Paystack Directive</button>
 </div>
-  <h3 class="text-center my-3">Paystack Embed</h3>
-  <angular4-paystack-embed
-    angular4-paystack
-    [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'mailexample@mail.com'"
-    [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
-    [class]="'btn btn-primary btn-lg'"
-  ></angular4-paystack-embed>
+<h3 class="text-center my-3">Paystack Embed</h3>
+<angular4-paystack-embed
+  angular4-paystack
+  [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'mailexample@mail.com'"
+  [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
+  [class]="'btn btn-primary btn-lg'"
+></angular4-paystack-embed>
