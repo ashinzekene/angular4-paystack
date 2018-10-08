@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 
 import { Angular4PaystackComponent } from './angular4-paystack.component';
-import { Angular4PaystackEmbed } from "./angular4-paystack-embed.component";
+import { Angular4PaystackEmbed } from './angular4-paystack-embed.component';
 import { Angular4PaystackDirective } from './angular4-paystack.directive';
 
 @NgModule({

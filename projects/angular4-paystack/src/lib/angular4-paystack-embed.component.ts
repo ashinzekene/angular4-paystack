@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { PaystackOptions } from './paystack-options';
 
-interface myWindow extends Window {
+interface MyWindow extends Window {
   PaystackPop: any;
 }
-declare var window: Partial<myWindow>;
+declare var window: Partial<MyWindow>;
 
 @Component({
   selector: 'angular4-paystack-embed',
@@ -18,7 +18,7 @@ export class Angular4PaystackEmbed implements OnInit {
   @Input() email: string;
   @Input() amount: number;
   @Input() metadata: {};
-  @Input() channels: string | string[];
+  @Input() channels: string[];
   @Input() ref: string;
   @Input() currency: string;
   @Input() plan: string;
@@ -26,9 +26,9 @@ export class Angular4PaystackEmbed implements OnInit {
   @Input() subaccount: string;
   @Input() transaction_charge: number;
   @Input() bearer: string;
-  @Output() paymentInit: EventEmitter<string> = new EventEmitter<string>();
-  @Output() close: EventEmitter<string> = new EventEmitter<string>();
-  @Output() callback: EventEmitter<string> = new EventEmitter<string>();
+  @Output() paymentInit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() close: EventEmitter<any> = new EventEmitter<any>();
+  @Output() callback: EventEmitter<any> = new EventEmitter<any>();
   private paystackOptions: Partial<PaystackOptions>;
   constructor() { }
 
@@ -41,12 +41,14 @@ export class Angular4PaystackEmbed implements OnInit {
     window.PaystackPop.setup(this.paystackOptions);
   }
   checkInput() {
-    if (!this.key) { return console.error('Paystack key cannot be empty'); }
-    if (!this.email) { return console.error('Paystack email cannot be empty'); }
-    if (!this.amount) { return console.error('Paystack amount cannot be empty'); }
-    if (!this.ref) { return console.error('Paystack ref cannot be empty'); }
+    if (!this.key) { return console.error('ANGULAR-PAYSTACK: Paystack key cannot be empty'); }
+    if (!this.email) { return console.error('ANGULAR-PAYSTACK: Paystack email cannot be empty'); }
+    if (!this.amount) { return console.error('ANGULAR-PAYSTACK: Paystack amount cannot be empty'); }
+    if (!this.ref) { return console.error('ANGULAR-PAYSTACK: Paystack ref cannot be empty'); }
     if (!this.callback.observers.length) {
-      return console.error(`Insert a callback output like so (callback)='PaymentComplete($event)' to check payment status`);
+      return console.error(`
+        ANGULAR-PAYSTACK: Insert a callback output like so (callback)='PaymentComplete($event)' to check payment status
+      `);
     }
     return true;
   }
@@ -63,6 +65,7 @@ export class Angular4PaystackEmbed implements OnInit {
       plan: this.plan || '',
       quantity: this.quantity || '',
       subaccount: this.subaccount || '',
+      channels: this.channels || ['card', 'bank'],
       transaction_charge: this.transaction_charge || 0,
       bearer: this.bearer || '',
       callback: (res) => this.callback.emit(res),
@@ -72,7 +75,7 @@ export class Angular4PaystackEmbed implements OnInit {
   ngOnInit() {
     if (this.text) {
       console.error(
-        'Paystack Text input is deprecated. Add text into textnode like so <angular4-paystack>Pay With Paystack</angular4-paystack>'
+        'ANGULAR-PAYSTACK: Paystack Text input is deprecated. Use this instead <angular4-paystack>Pay With Paystack</angular4-paystack>'
       );
     }
     this.pay();

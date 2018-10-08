@@ -1,7 +1,7 @@
 # ANGULAR4-PAYSTACK
 
 > This is an angular module that abstracts the complexity of making paystack payments with Angular2+.
-  
+
 ## USAGE
 
 ### 1. Install the module
@@ -11,14 +11,14 @@
 
 ### 2. Reference the Paystack inline script in your index.html like so:
   ```html
-    <script src="https://js.paystack.co/v1/inline.js"></script>  
+    <script src="https://js.paystack.co/v1/inline.js"></script>
   ```
 
 ### 3. Import the module
   In your `app.module.ts` or your working module like so:
 
   ```ts
-  import { NgModule } from '@angular/core'; 
+  import { NgModule } from '@angular/core';
 
   import { Angular4PaystackModule } from 'angular4-paystack';
   ...
@@ -82,7 +82,7 @@
 ## OPTIONS
 
 |Name                   | Type           | Required            | Default Value       | Description         |
-|-----------------------|----------------|---------------------|---------------------|---------------------| 
+|-----------------------|----------------|---------------------|---------------------|---------------------|
 |  `amount `            | `number`       | true                |  undefined          | Amount to withdraw (in kobo for NGN)
 |  `email `             | `string`       | true                |  undefined          | The customer's email address.
 |  `key`                | `string`       | true                |  undefined          | Your pubic Key from Paystack. Use test key for test mode and live key for live mode
@@ -95,11 +95,13 @@
 |  `currency`           | `string`       | false               |  "NGN"              | Transaction currency
 |  `plan`               | `string`       | false               |  ""                 | If transaction is to create a subscription to a predefined plan, provide plan code here.
 |  `quantity`           | `string`       | false               |  ""                 | Used to apply a multiple to the amount returned by the plan code above.
+|  `paymentInit`        | `function`     | false               |  undefined          | A function called when the payment is about to begin
 |  `onClose`            | `function`     | false               |  undefined          | A function called if the customer closes the payment window
 **For Split Payments** |
-|  `subaccount`         | `string`       | false               |  ""                 | The code for the subaccount that owns the payment. 
+|  `subaccount`         | `string`       | false               |  ""                 | The code for the subaccount that owns the payment.
 |  `transaction_charge` | `number`       | false               |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
 |  `bearer`             | `string`       | false               |  ""                 | Who bears Paystack charges? account or subaccount
+|  `channels`           | `array`         | false               |  ['bank', 'card']  | Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
 
 > For more information checkout [paystack's documentation](https://developers.paystack.co/docs/paystack-inline#section-working-with-paystack-inline)
 
