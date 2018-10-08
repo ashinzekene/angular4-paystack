@@ -12,5 +12,6 @@ export interface PaystackOptions {
   bearer: string;
   callback: (reference: string) => void ;
   onClose:  () => void;
-  container?: string
+  container?: string;
+  channels?:  'card' | 'bank' | ['card', 'bank'];
 }
