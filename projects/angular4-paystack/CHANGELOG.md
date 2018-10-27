@@ -2,6 +2,11 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 2.2.0 - 12:10:18
+### Added
+- Channels to options
+- paymentInit event
+
 ## 2.1.0 - 2018-04-17
 ### Added
 - Angular4Paystack directive
@@ -11,7 +16,7 @@ All notable changes to `angular4-paystack` will be documented in this file
 
 ## 2.0.0 - 2017-12-02
 ### Added
-- You can now use the paystack inline embed in your angular application 
+- You can now use the paystack inline embed in your angular application
 - Added tests
 ### Changed
 - updated README to show how to use the paystack inline embed and little fixes
@@ -26,7 +31,7 @@ All notable changes to `angular4-paystack` will be documented in this file
 
 
 ## 1.2.0 - 2017-09-22
-### Changed 
+### Changed
 - text input `(text)` is now deprecated
 - added example section
 - updated readme

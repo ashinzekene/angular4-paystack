@@ -2,7 +2,7 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
-## 2.1.2 - -:-:-
+## 2.2.0 - 12:10:18
 ### Added
 - Channels to options
 - paymentInit event
