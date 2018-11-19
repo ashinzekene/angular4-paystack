@@ -9,9 +9,43 @@
   npm install --save angular4-paystack
   ```
 
-### 2. Reference the Paystack inline script in your index.html like so:
+### 2. Call Paystack inline script
+There are two options available
+
+#### A. Reference the Paystack inline script in your index.html like so:
   ```html
     <script src="https://js.paystack.co/v1/inline.js"></script>
+  ```
+This option has a limition in some cases (e.g. Single Page Applications), your clients/customers might not be able to use the button twice without restarting the app. Hence the second method.
+#### B. Call Paystack inline script dynamically
+In the page you need to use this module/button,
+  ```ts
+  const paystackUrl = 'https://js.paystack.co/v1/inline.js';
+
+  export class MyAppPage {
+      loadPaystackApi: Promise<any>;
+      
+      //
+      //...
+      //
+      
+      ionViewDidEnter() {
+          this.loadPaystackApi = new Promise((resolve) => {
+              console.log('resolving promise...');
+              this.loadPaystackScript();
+          });
+      }
+
+      public loadPaystackScript() {
+          console.log('preparing to load...')
+          let node = document.createElement('script');
+          node.src = paystackUrl;
+          node.type = 'text/javascript';
+          node.async = true;
+          node.charset = 'utf-8';
+          document.getElementsByTagName('head')[0].appendChild(node);
+      }
+  }
   ```
 
 ### 3. Import the module
