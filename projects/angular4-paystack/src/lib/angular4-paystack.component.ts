@@ -35,15 +35,18 @@ export class Angular4PaystackComponent implements OnInit {
 
   pay() {
     if (!this.checkInput()) { return; }
-    this.setUp();
-    if (this.isPaying) { return; }
-    if (this.paymentInit.observers.length) {
-      this.paymentInit.emit();
-    }
-    const payment = window.PaystackPop.setup(this.paystackOptions);
-    payment.openIframe();
-    this.isPaying = true;
+    this.loadScript().then(() => {
+      this.setUp();
+      if (this.isPaying) { return; }
+      if (this.paymentInit.observers.length) {
+        this.paymentInit.emit();
+      }
+      const payment = window.PaystackPop.setup(this.paystackOptions);
+      payment.openIframe();
+      this.isPaying = true;
+    });
   }
+
   checkInput() {
     if (!this.key) { return console.error('ANGULAR-PAYSTACK: Paystack key cannot be empty'); }
     if (!this.email) { return console.error('ANGULAR-PAYSTACK: Paystack email cannot be empty'); }
@@ -81,6 +84,24 @@ export class Angular4PaystackComponent implements OnInit {
       },
     };
   }
+
+  loadScript(): Promise<void> {
+    return new Promise(resolve => {
+      if (window.PaystackPop && typeof window.PaystackPop.setup === 'function') {
+        resolve();
+        return;
+      }
+      const script = window.document.createElement('script');
+      window.document.head.appendChild(script);
+      const onLoadFunc = () => {
+        script.removeEventListener('load', onLoadFunc);
+        resolve();
+      };
+      script.addEventListener('load', onLoadFunc);
+      script.setAttribute('src', 'https://js.paystack.co/v1/inline.js');
+    });
+  }
+
   ngOnInit() {
     if (this.text) {
       console.error(
