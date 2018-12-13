@@ -2,6 +2,10 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 2.3.0 - 13:12:18
+### Added
+- Paystack script is imported dynamically
+
 ## 2.2.0 - 12:10:18
 ### Added
 - Channels to options
