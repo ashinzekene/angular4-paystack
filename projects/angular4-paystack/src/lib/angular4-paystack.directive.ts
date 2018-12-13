@@ -98,11 +98,9 @@ export class Angular4PaystackDirective {
   }
 
   @HostListener('click')
-  buttonClick() {
+  async buttonClick() {
     if (this.isPaying) { return; }
-    (async () => {
-      await this.loadScript();
-      this.pay();
-    })();
+    await this.loadScript();
+    this.pay();
   }
 }

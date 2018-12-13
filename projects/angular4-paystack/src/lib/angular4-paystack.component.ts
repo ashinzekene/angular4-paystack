@@ -33,18 +33,17 @@ export class Angular4PaystackComponent implements OnInit {
   private isPaying = false;
   constructor() {}
 
-  pay() {
+  async pay() {
     if (!this.checkInput()) { return; }
-    this.loadScript().then(() => {
-      this.setUp();
-      if (this.isPaying) { return; }
-      if (this.paymentInit.observers.length) {
-        this.paymentInit.emit();
-      }
-      const payment = window.PaystackPop.setup(this.paystackOptions);
-      payment.openIframe();
-      this.isPaying = true;
-    });
+    await this.loadScript();
+    this.setUp();
+    if (this.isPaying) { return; }
+    if (this.paymentInit.observers.length) {
+      this.paymentInit.emit();
+    }
+    const payment = window.PaystackPop.setup(this.paystackOptions);
+    payment.openIframe();
+    this.isPaying = true;
   }
 
   checkInput() {

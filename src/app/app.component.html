@@ -10,16 +10,25 @@
 
   <button
     class="btn btn-danger m-3"
-    angular4-paystack [channels]="['bank', '737']"
+    angular4-paystack
+    [channels]="['card', 'bank']"
     [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'mailexample@mail.com'"
     [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
     [class]="'btn btn-primary btn-lg'"
     >Pay With Paystack Directive</button>
 </div>
+<button class="btn btn-warning" (click)="toggleEmbed()">TOGGLE EMBED</button>
+<h3>Embed {{ showEmbed ? 'visible' : 'hidden' }}</h3>
+<div>
+  You can't have more than one payment Instance at a time. Hide paystack embed to try out
+  paystack directive and paystack component
+</div>
 <h3 class="text-center my-3">Paystack Embed</h3>
-<angular4-paystack-embed
-  angular4-paystack
-  [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'mailexample@mail.com'"
-  [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
-  [class]="'btn btn-primary btn-lg'"
-></angular4-paystack-embed>
+<div *ngIf="showEmbed">
+  <angular4-paystack-embed
+    angular4-paystack
+    [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'mailexample@mail.com'"
+    [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
+    [class]="'btn btn-primary btn-lg'" [channels]="['card']"
+  ></angular4-paystack-embed>
+</div>

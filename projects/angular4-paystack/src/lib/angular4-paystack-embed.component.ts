@@ -90,16 +90,14 @@ export class Angular4PaystackEmbed implements OnInit {
     });
   }
 
-  ngOnInit() {
-    (async () => {
-      await this.loadScript();
-      if (this.text) {
-        console.error(
-          'ANGULAR-PAYSTACK: Paystack Text input is deprecated. Use this instead <angular4-paystack>Pay With Paystack</angular4-paystack>'
-        );
-      }
-      this.pay();
-    })();
+  async ngOnInit() {
+    await this.loadScript();
+    if (this.text) {
+      console.error(
+        'ANGULAR-PAYSTACK: Paystack Text input is deprecated. Use this instead <angular4-paystack>Pay With Paystack</angular4-paystack>'
+      );
+    }
+    this.pay();
   }
 
 }
