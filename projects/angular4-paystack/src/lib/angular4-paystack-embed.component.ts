@@ -72,7 +72,26 @@ export class Angular4PaystackEmbed implements OnInit {
       onClose: () => this.close && this.close.emit(),
     };
   }
-  ngOnInit() {
+
+  loadScript(): Promise<void> {
+    return new Promise(resolve => {
+      if (window.PaystackPop && typeof window.PaystackPop.setup === 'function') {
+        resolve();
+        return;
+      }
+      const script = window.document.createElement('script');
+      window.document.head.appendChild(script);
+      const onLoadFunc = () => {
+        script.removeEventListener('load', onLoadFunc);
+        resolve();
+      };
+      script.addEventListener('load', onLoadFunc);
+      script.setAttribute('src', 'https://js.paystack.co/v1/inline.js');
+    });
+  }
+
+  async ngOnInit() {
+    await this.loadScript();
     if (this.text) {
       console.error(
         'ANGULAR-PAYSTACK: Paystack Text input is deprecated. Use this instead <angular4-paystack>Pay With Paystack</angular4-paystack>'

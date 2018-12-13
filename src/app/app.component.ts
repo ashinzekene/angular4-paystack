@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   public title = 'My app';
+  public showEmbed = false;
   public results = {
     name: ''
   };
   tRef = '';
   result = '';
   constructor() {}
+
+  toggleEmbed() {
+    this.showEmbed = !this.showEmbed;
+  }
 
   paymentDone(ref: any) {
     this.title = 'Payment successfull';
