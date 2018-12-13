@@ -9,13 +9,8 @@
   npm install --save angular4-paystack
   ```
 
-### 2. Reference the Paystack inline script in your index.html like so:
-  ```html
-    <script src="https://js.paystack.co/v1/inline.js"></script>
-  ```
-
-### 3. Import the module
-  In your `app.module.ts` or your working module like so:
+### 2. Import the module
+  In your `app.module.ts` or any module where the component or directive would be used like so:
 
   ```ts
   import { NgModule } from '@angular/core';
@@ -32,7 +27,7 @@
   export class AppModule {}
   ```
 
-### 4. Use the component in your code
+### 3. Use the component in your code
   There are two available options
 
   * Paystack Inline - Loads the credit card form in an iframe that appears as a popup
@@ -42,6 +37,7 @@
         [email]="'mailexample@mail.com'"
         [amount]="5000000"
         [ref]="'2637458697'"
+        [channels]="['bank']"
         [class]="'btn btn-primary'"
         (close)="paymentCancel()"
         (callback)="paymentDone($event)"

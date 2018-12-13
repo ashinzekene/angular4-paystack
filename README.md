@@ -27,7 +27,7 @@
   export class AppModule {}
   ```
 
-### 4. Use the component in your code
+### 3. Use the component in your code
   There are two available options
 
   * Paystack Inline - Loads the credit card form in an iframe that appears as a popup
