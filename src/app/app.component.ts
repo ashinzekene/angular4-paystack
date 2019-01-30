@@ -29,8 +29,12 @@ export class AppComponent implements OnInit {
     console.log(this.title);
   }
 
-  ngOnInit() {
+  setRandomPaymentRef() {
     this.tRef = `${Math.random() * 10000000000000}`;
+  }
+
+  ngOnInit() {
+    this.setRandomPaymentRef();
   }
 
 }
