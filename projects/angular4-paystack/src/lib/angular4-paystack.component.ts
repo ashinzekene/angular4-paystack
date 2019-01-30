@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { PaystackOptions } from './paystack-options';
+import { checkNoChanges } from '@angular/core/src/render3/instructions';
 
 interface MyWindow extends Window {
   PaystackPop: any;
@@ -10,7 +11,7 @@ declare var window: MyWindow;
   selector: 'angular4-paystack',
   template: `<button [ngClass]="class" [ngStyle]="style" (click)="pay()">{{text}}<ng-content></ng-content></button>`,
 })
-export class Angular4PaystackComponent implements OnInit {
+export class Angular4PaystackComponent implements OnInit, OnChanges {
   @Input() text: string;
   @Input() key: string;
   @Input() email: string;
@@ -99,6 +100,10 @@ export class Angular4PaystackComponent implements OnInit {
       script.addEventListener('load', onLoadFunc);
       script.setAttribute('src', 'https://js.paystack.co/v1/inline.js');
     });
+  }
+
+  ngOnChanges() {
+    this.setUp();
   }
 
   ngOnInit() {
