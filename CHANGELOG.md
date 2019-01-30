@@ -2,6 +2,10 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 2.3.3 - 20:01:19
+### Bug Fixes
+- Nows upports dynamically updating paymentOptions (eg. Payment Ref #11)
+
 ## 2.3.0 - 13:12:18
 ### Added
 - Paystack script is imported dynamically
