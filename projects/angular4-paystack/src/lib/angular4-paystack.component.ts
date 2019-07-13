@@ -69,7 +69,6 @@ export class Angular4PaystackComponent implements OnInit, OnChanges {
       metadata: this.metadata || {},
       currency: this.currency || 'NGN' ,
       plan: this.plan || '' ,
-      channels: this.channels || ['card', 'bank'],
       quantity: this.quantity || '' ,
       subaccount: this.subaccount || '' ,
       transaction_charge: this.transaction_charge || 0 ,
