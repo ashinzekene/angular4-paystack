@@ -23,9 +23,6 @@
       "angular4-paystack": [
         "dist/angular4-paystack"
       ],
-      "angular4-paystack/*": [
-        "dist/angular4-paystack/*"
-      ]
     }
   }
 }
