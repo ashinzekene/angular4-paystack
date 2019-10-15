@@ -66,7 +66,7 @@ export class Angular4PaystackDirective {
       plan: this.plan || '' ,
       quantity: this.quantity || '' ,
       subaccount: this.subaccount || '' ,
-      channels: this.channels || ['card', 'bank'],
+      channels: this.channels,
       transaction_charge: this.transaction_charge || 0 ,
       bearer: this.bearer || '' ,
       callback: (res) => {
