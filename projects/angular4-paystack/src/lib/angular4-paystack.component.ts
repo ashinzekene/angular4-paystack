@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { PaystackOptions } from './paystack-options';
-import { checkNoChanges } from '@angular/core/src/render3/instructions';
 
 interface MyWindow extends Window {
   PaystackPop: any;
