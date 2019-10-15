@@ -2,8 +2,8 @@
   "name": "angular4-paystack",
   "version": "2.3.2",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,5 @@
   "fesm2015": "fesm2015/angular4-paystack.js",
   "typings": "angular4-paystack.d.ts",
   "metadata": "angular4-paystack.metadata.json",
-  "sideEffects": false,
-  "dependencies": {
-    "tslib": "^1.9.0"
-  }
+  "sideEffects": false
 }
