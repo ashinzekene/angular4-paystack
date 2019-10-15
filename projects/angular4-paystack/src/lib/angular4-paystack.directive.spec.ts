@@ -1,16 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Angular4PaystackComponent } from './angular4-paystack.component';
+import { Angular4PaystackDirective } from './angular4-paystack.directive';
 import { Angular4PaystackService } from './angular4-paystack.service';
 import { PUBLIC_KEY_TOKEN } from './paystack-token';
+import { Component } from '@angular/core';
 
-describe('Angular4PaystackComponent', () => {
-  let component: Angular4PaystackComponent;
-  let fixture: ComponentFixture<Angular4PaystackComponent>;
+@Component({
+  template: `<button type="text" angular-rave></button>`
+})
+class TestComponent {
+}
+
+describe('Angular4PaystackDirective', () => {
+  let component: TestComponent;
+  let fixture: ComponentFixture<TestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Angular4PaystackComponent ],
+      declarations: [ Angular4PaystackDirective, TestComponent ],
       providers: [
         Angular4PaystackService,
         { provide: PUBLIC_KEY_TOKEN, useValue: 'public-key' }
@@ -20,7 +27,7 @@ describe('Angular4PaystackComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Angular4PaystackComponent);
+    fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
