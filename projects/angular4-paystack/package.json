@@ -1,6 +1,6 @@
 {
   "name": "angular4-paystack",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "peerDependencies": {
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3"
@@ -19,7 +19,12 @@
     "email": "ashinzekene@gmail.com",
     "url": "https://github.com/ashinzekene/angular4-paystack/issues"
   },
-  "keywords": ["angular", "paystack", "transaction", "payment"],
+  "keywords": [
+    "angular",
+    "paystack",
+    "transaction",
+    "payment"
+  ],
   "description": "Angular wrapper for integrating paystack transactions",
   "main": "bundles/angular4-paystack.umd.js",
   "module": "fesm5/angular4-paystack.js",

@@ -2,15 +2,21 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
-## 2.3.3 - 20:01:19
+## 2.4.0 - 15-10-20
+### Added
+  - Upgraded to angular v8  
 ### Bug Fixes
-- Nows upports dynamically updating paymentOptions (eg. Payment Ref #11)
+- Supports all payment channels when none is passes  
 
-## 2.3.0 - 13:12:18
+## 2.3.3 - 20-01-19
+### Bug Fixes
+- Nows upports dynamically updating paymentOptions (eg. Payment Ref #11)  
+
+## 2.3.0 - 13-12-18
 ### Added
 - Paystack script is imported dynamically
 
-## 2.2.0 - 12:10:18
+## 2.2.0 - 12-10-18
 ### Added
 - Channels to options
 - paymentInit event
