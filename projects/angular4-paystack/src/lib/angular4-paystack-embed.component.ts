@@ -65,7 +65,7 @@ export class Angular4PaystackEmbed implements OnInit {
       plan: this.plan || '',
       quantity: this.quantity || '',
       subaccount: this.subaccount || '',
-      channels: this.channels || ['card', 'bank'],
+      channels: this.channels,
       transaction_charge: this.transaction_charge || 0,
       bearer: this.bearer || '',
       callback: (res) => this.callback.emit(res),
