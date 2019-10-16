@@ -31,100 +31,100 @@ describe('Angular4PaystackEmbedComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('should not load the modal when the amount is not provided', async () => {
-    spyOn(component.paymentInit, 'emit')    
-    component.email = "someuser@email.com";
-    component.ref = "reference-val";
+    spyOn(component.paymentInit, 'emit');
+    component.email = 'someuser@email.com';
+    component.ref = 'reference-val';
     component.callback.subscribe(() => {});
-    const error = await component.pay()
-    
-    fixture.detectChanges();
-    expect(error).toEqual("ANGULAR-PAYSTACK: Paystack amount cannot be empty");
-    expect(component.paymentInit.emit).not.toHaveBeenCalled()
-  })
-  
-  it('should not load the modal when the email is not provided', async () => {
-    spyOn(component.paymentInit, 'emit')    
-    component.ref = "reference-val";
-    component.amount = 50000;
-    component.callback.subscribe(() => {});
-    const error = await component.pay()
-    
-    fixture.detectChanges();
-    expect(error).toEqual("ANGULAR-PAYSTACK: Paystack email cannot be empty");
-    expect(component.paymentInit.emit).not.toHaveBeenCalled()
-  })
-  
-  it('should not load the modal when ref is not provided', async () => {
-    spyOn(component.paymentInit, 'emit')    
-    component.email = "someuser@email.com";
-    component.amount = 50000;
-    component.callback.subscribe(() => {});
-    const error = await component.pay()
+    const error = await component.pay();
 
     fixture.detectChanges();
-    expect(error).toEqual("ANGULAR-PAYSTACK: Paystack ref cannot be empty");
-    expect(component.paymentInit.emit).not.toHaveBeenCalled()
-  })
+    expect(error).toEqual('ANGULAR-PAYSTACK: Paystack amount cannot be empty');
+    expect(component.paymentInit.emit).not.toHaveBeenCalled();
+  });
+
+  it('should not load the modal when the email is not provided', async () => {
+    spyOn(component.paymentInit, 'emit');
+    component.ref = 'reference-val';
+    component.amount = 50000;
+    component.callback.subscribe(() => {});
+    const error = await component.pay();
+
+    fixture.detectChanges();
+    expect(error).toEqual('ANGULAR-PAYSTACK: Paystack email cannot be empty');
+    expect(component.paymentInit.emit).not.toHaveBeenCalled();
+  });
+
+  it('should not load the modal when ref is not provided', async () => {
+    spyOn(component.paymentInit, 'emit');
+    component.email = 'someuser@email.com';
+    component.amount = 50000;
+    component.callback.subscribe(() => {});
+    const error = await component.pay();
+
+    fixture.detectChanges();
+    expect(error).toEqual('ANGULAR-PAYSTACK: Paystack ref cannot be empty');
+    expect(component.paymentInit.emit).not.toHaveBeenCalled();
+  });
 
   it('should prefer key used by component', async () => {
-    spyOn(component.paymentInit, 'emit')    
-    component.email = "someuser@email.com";
+    spyOn(component.paymentInit, 'emit');
+    component.email = 'someuser@email.com';
     component.amount = 50000;
-    component.key = "another-key"
+    component.key = 'another-key';
     component.callback.subscribe(() => {});
-    const error = await component.pay()
+    const error = await component.pay();
 
     fixture.detectChanges();
-    expect(error).toEqual("ANGULAR-PAYSTACK: Paystack ref cannot be empty");
-    expect(component.paymentInit.emit).not.toHaveBeenCalled()
-    expect(component._paystackOptions.key).toEqual(component.key)
-  })
+    expect(error).toEqual('ANGULAR-PAYSTACK: Paystack ref cannot be empty');
+    expect(component.paymentInit.emit).not.toHaveBeenCalled();
+    expect(component._paystackOptions.key).toEqual(component.key);
+  });
 
   it('should not load with incomplete paystackOptions object', async () => {
-    spyOn(component.paymentInit, 'emit')
+    spyOn(component.paymentInit, 'emit');
     component.paystackOptions = {
-      email: "someuser@email.com",
-      ref: "",
+      email: 'someuser@email.com',
+      ref: '',
       amount: 50000,
-    }
+    };
     component.callback.subscribe(() => {});
     component.paymentInit.subscribe(() => {});
-    const error = await component.pay()
+    const error = await component.pay();
 
     fixture.detectChanges();
-    expect(error).toEqual("ANGULAR-PAYSTACK: Paystack ref cannot be empty");
-    expect(component.paymentInit.emit).not.toHaveBeenCalled()
-  })
+    expect(error).toEqual('ANGULAR-PAYSTACK: Paystack ref cannot be empty');
+    expect(component.paymentInit.emit).not.toHaveBeenCalled();
+  });
 
   it('should accept the paystackOptions object', async () => {
-    spyOn(component.paymentInit, 'emit')
+    spyOn(component.paymentInit, 'emit');
     component.paystackOptions = {
-      email: "someuser@email.com",
-      ref: "reference-val",
+      email: 'someuser@email.com',
+      ref: 'reference-val',
       amount: 50000,
-    }
+    };
     component.callback.subscribe(() => {});
     component.paymentInit.subscribe(() => {});
-    const error = await component.pay()
+    const error = await component.pay();
 
     fixture.detectChanges();
     expect(error).toBeUndefined();
-    expect(component.paymentInit.emit).toHaveBeenCalled()
-  })
+    expect(component.paymentInit.emit).toHaveBeenCalled();
+  });
 
   it('should load the modal when parameters are passed', async () => {
-    spyOn(component.paymentInit, 'emit')
-    component.email = "someuser@email.com";
-    component.ref = "reference-val";
+    spyOn(component.paymentInit, 'emit');
+    component.email = 'someuser@email.com';
+    component.ref = 'reference-val';
     component.amount = 50000;
     component.callback.subscribe(() => {});
     component.paymentInit.subscribe(() => {});
-    const error = await component.pay()
+    const error = await component.pay();
 
     fixture.detectChanges();
     expect(error).toBeUndefined();
-    expect(component.paymentInit.emit).toHaveBeenCalled()
-  })
+    expect(component.paymentInit.emit).toHaveBeenCalled();
+  });
 });

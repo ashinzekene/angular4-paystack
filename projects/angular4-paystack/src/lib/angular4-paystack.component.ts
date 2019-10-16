@@ -61,7 +61,7 @@ export class Angular4PaystackComponent {
     if (!this.callback.observers.length) {
       return 'ANGULAR-PAYSTACK: Insert a callback output like so (callback)=\'PaymentComplete($event)\' to check payment status';
     }
-    return this.paystackService.checkInput(obj)
+    return this.paystackService.checkInput(obj);
   }
 
   generateOptions(obj: PaystackOptions) {

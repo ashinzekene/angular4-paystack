@@ -20,6 +20,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
+        npx ng lint --fix
         npx ng build
         npx ng test angular4-paystack -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       env:

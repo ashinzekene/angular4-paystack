@@ -14,7 +14,7 @@ import { PUBLIC_KEY_TOKEN } from './paystack-token';
     [email]="'mailexample@mail.com'"
     [amount]="'5000000'"
     [ref]="'some-random-str'"
-    (paymentInit)="paymentInit()"      
+    (paymentInit)="paymentInit()"
     (close)="paymentCancel()"
     (callback)="paymentDone($event)"
     [class]="'btn btn-primary btn-lg'"
@@ -25,15 +25,15 @@ import { PUBLIC_KEY_TOKEN } from './paystack-token';
 })
 class TestComponent {
   paymentInit() {
-    return "initialized";
+    return 'initialized';
   }
 
   paymentDone(ref: any) {
-   return "successful";
+   return 'successful';
   }
 
   paymentCancel() {
-    return "failed";
+    return 'failed';
   }
 }
 
@@ -57,7 +57,7 @@ describe('Angular4PaystackDirective', () => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    payButton = fixture.debugElement.query(By.css('button'));    
+    payButton = fixture.debugElement.query(By.css('button'));
   });
 
   it('should create', () => {
@@ -69,7 +69,7 @@ describe('Angular4PaystackDirective', () => {
   //   expect(component).toBeTruthy();
   //   payButton.triggerEventHandler("click", {})
   //   fixture.detectChanges();
-    
+
   //   expect(component.paymentInit).toHaveBeenCalled()
   // });
 });
