@@ -5,74 +5,165 @@
 ## USAGE
 
 ### 1. Install the module
-  ```sh
-  npm install --save angular4-paystack
-  ```
+```sh
+npm install --save angular4-paystack
+```
 
 ### 2. Import the module
-  In your `app.module.ts` or any module where the component or directive would be used like so:
+In your `app.module.ts` or any module where the component or directive would be used like so:
 
-  ```ts
-  import { NgModule } from '@angular/core';
+```ts
+import { NgModule } from '@angular/core';
 
-  import { Angular4PaystackModule } from 'angular4-paystack';
-  ...
+import { Angular4PaystackModule } from 'angular4-paystack';
+...
 
-  @NgModule({
-    imports: [
-      Angular4PaystackModule,
-    ]
-  })
+@NgModule({
+  imports: [
+    Angular4PaystackModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),
+  ]
+})
 
-  export class AppModule {}
+export class AppModule {}
+```
+
+### 3. Implement in your project
+There are two available options
+
+* **AngularPaystackComponent**: Renders a button which when clicked loads paystack Inline in an iframe
+  ```html
+    <angular4-paystack
+      [email]="'mailexample@mail.com'"
+      [amount]="5000000"
+      [ref]="reference"
+      [channels]="['bank']"
+      [class]="'btn btn-primary'"
+      (close)="paymentCancel()"
+      (callback)="paymentDone($event)"
+    >
+      Pay with Paystack
+    </angular4-paystack>
   ```
 
-### 3. Use the component in your code
-  There are two available options
+*  **AngularPaystackDirective**: A directive that loads paystack inline in an iframe when clicked
+```html
+  <button
+    angular4-paystack
+    [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxx'"
+    [email]="'mailexample@mail.com'"
+    [amount]="5000000"
+    [ref]="reference"
+    [class]="'btn btn-primary'"
+    (paymentInit)="paymentInit()"
+    (close)="paymentCancel()"
+    (callback)="paymentDone($event)"
+  >
+    Pay with Paystack
+  </button>
+```
 
-  * Paystack Inline - Loads the credit card form in an iframe that appears as a popup
-    ```html
-      <angular4-paystack
-        [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-        [email]="'mailexample@mail.com'"
-        [amount]="5000000"
-        [ref]="'2637458697'"
-        [channels]="['bank']"
-        [class]="'btn btn-primary'"
-        (close)="paymentCancel()"
-        (callback)="paymentDone($event)"
-      >Pay with Paystack</angular4-paystack>
-    ```
+And then in your `component.ts`
+```ts
+  import { Component, OnInit } from '@angular/core';
 
-  * Paystack Inline (Directive) - Loads the credit card form in an iframe that appears as a popup
-    ```html
-      <button
-        angular4-paystack
-        [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-        [email]="'mailexample@mail.com'"
-        [amount]="5000000"
-        [ref]="'2637458697'"
-        [class]="'btn btn-primary'"
-        (close)="paymentCancel()"
-        (callback)="paymentDone($event)"
-      >Pay with Paystack</button>
-    ```
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent implements OnInit {
+    reference = '';
+    constructor() {}
 
-  * Paystack Inline Embed - Paystack Inline Embed is the latest addition to the stack, it offers a stylish Inline that loads the credit card form in a set container like it sits in your page.
-    ```html
-      <angular4-paystack-embed
-        [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-        [email]="'mailexample@mail.com'"
-        [amount]="5000000"
-        [ref]="'2637458697'"
-        [class]="'btn btn-primary'"
-        (close)="paymentCancel()"
-        (callback)="paymentDone($event)"
-      ></angular4-paystack-embed>
-    ```
-    **NOTE**
-    - The payment form will be 100% of the width of wherever you put it.
-    - To maintain a uniform design, your page's background color should be white
+    paymentInit() {
+      console.log('Payment initialized');
+    }
+
+    paymentDone(ref: any) {
+      this.title = 'Payment successfull';
+      console.log(this.title, ref);
+    }
+
+    paymentCancel() {
+      console.log('payment failed');
+    }
+
+    ngOnInit() {
+      this.reference = `ref-${Math.ceil(Math.random() * 10e13)}`;
+    }
+
+  }
+```
+Also you can use the `paystackOptions` object like so:
+```html
+  <button
+    angular4-paystack
+    [paystackOptions]="options"
+    (paymentInit)="paymentCancel()"
+    (close)="paymentCancel()"
+    (callback)="paymentDone($event)"
+  >
+    Pay with Paystack
+  </button>
+```
+
+And then in your `component.ts`
+```ts
+  import { Component } from '@angular/core';
+  import { PaystackOptions } from 'angular4-paystack';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    options: PaystackOptions = {
+      amount: 50000,
+      email: 'user@mail.com',
+      ref: `${Math.ceil(Math.random() * 10e10)}`
+    }
+    constructor() {}
+
+    paymentInit() {
+      console.log('Payment initialized');
+    }
+
+    paymentDone(ref: any) {
+      this.title = 'Payment successfull';
+      console.log(this.title, ref);
+    }
+
+    paymentCancel() {
+      console.log('payment failed');
+    }
+  }
+```
+Also, you can pass in a key in the component and the directive, in such situation, this key is given a higher preference over the global `forRoot` key. For example, if you have this is your file
+```ts
+@NgModule({
+  imports: [
+    Angular4PaystackModule.forRoot('pk_test_1'),
+  ]
+})
+```
+and this in your component
+```html
+  <button
+    angular4-paystack
+    [key]="'pk_test_2'"
+    [email]="'mailexample@mail.com'"
+    [amount]="5000000"
+    [ref]="reference"
+    [class]="'btn btn-primary'"
+    (paymentInit)="paymentInit()"
+    (close)="paymentCancel()"
+    (callback)="paymentDone($event)"
+  >
+    Pay with Paystack
+  </button>
+```
+Then `pk_test_2` would be used instead
 
 
 ## OPTIONS
@@ -91,13 +182,14 @@
 |  `currency`           | `string`       | false               |  "NGN"              | Transaction currency
 |  `plan`               | `string`       | false               |  ""                 | If transaction is to create a subscription to a predefined plan, provide plan code here.
 |  `quantity`           | `string`       | false               |  ""                 | Used to apply a multiple to the amount returned by the plan code above.
+|  `paystackOptions`     | `object`     | false               |  undefined          | An object containing the paystack options above. **NOTE:** The function listeners eg `callback`, `paymentInit` should not be added here
 |  `paymentInit`        | `function`     | false               |  undefined          | A function called when the payment is about to begin
 |  `onClose`            | `function`     | false               |  undefined          | A function called if the customer closes the payment window
 **For Split Payments** |
 |  `subaccount`         | `string`       | false               |  ""                 | The code for the subaccount that owns the payment.
 |  `transaction_charge` | `number`       | false               |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
 |  `bearer`             | `string`       | false               |  ""                 | Who bears Paystack charges? account or subaccount
-|  `channels`           | `array`         | false               |  ['bank', 'card']  | Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
+|  `channels`           | `array`         | false              | undefined  | Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
 
 > For more information checkout [paystack's documentation](https://developers.paystack.co/docs/paystack-inline#section-working-with-paystack-inline)
 
