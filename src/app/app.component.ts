@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
     this.showEmbed = !this.showEmbed;
   }
 
+  paymentInit() {
+    console.log('Payment initialized');
+  }
+
   paymentDone(ref: any) {
     this.title = 'Payment successfull';
     console.log(this.title, ref);

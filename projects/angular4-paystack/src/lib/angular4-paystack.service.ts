@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { PUBLIC_KEY_TOKEN } from './paystack-token';
-import { PaystackOptions, PrivatePaystackOptionsWithEmitters } from './paystack-options';
+import { PaystackOptions } from './paystack-options';
 
 interface MyWindow extends Window {
   PaystackPop: {
@@ -32,7 +32,7 @@ export class Angular4PaystackService {
     });
   }
 
-  checkInput(obj: Partial<PrivatePaystackOptionsWithEmitters>): string {
+  checkInput(obj: Partial<PaystackOptions>): string {
     if (!obj.key && !this.token) {
       return 'ANGULAR-PAYSTACK: Please insert a your public key';
     }
@@ -44,9 +44,6 @@ export class Angular4PaystackService {
     }
     if (!obj.ref) {
       return 'ANGULAR-PAYSTACK: Paystack ref cannot be empty';
-    }
-    if (!obj.callback.observers.length) {
-      return 'ANGULAR-PAYSTACK: Insert a callback output like so (callback)=\'PaymentComplete($event)\' to check payment status';
     }
     return '';
   }

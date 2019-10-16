@@ -39,15 +39,15 @@ export class Angular4PaystackDirective {
   async pay() {
     let errorText = '';
     if (this.paystackOptions && Object.keys(this.paystackOptions).length >= 2) {
-      errorText = this.paystackService.checkInput(this.paystackOptions);
+      errorText = this.valdateInput(this.paystackOptions);
       this.generateOptions(this.paystackOptions);
     } else {
-      errorText = this.paystackService.checkInput(this);
+      errorText = this.valdateInput(this);
       this.generateOptions(this);
     }
     if (errorText) {
       console.error(errorText);
-      return;
+      return errorText;
     }
     await this.paystackService.loadScript();
     if (this.isPaying) { return; }
@@ -57,6 +57,13 @@ export class Angular4PaystackDirective {
     const payment = window.PaystackPop.setup(this._paystackOptions);
     payment.openIframe();
     this.isPaying = true;
+  }
+
+  valdateInput(obj: PaystackOptions) {
+    if (!this.callback.observers.length) {
+      return 'ANGULAR-PAYSTACK: Insert a callback output like so (callback)=\'PaymentComplete($event)\' to check payment status';
+    }
+    return this.paystackService.checkInput(obj)
   }
 
   generateOptions(obj: PaystackOptions) {

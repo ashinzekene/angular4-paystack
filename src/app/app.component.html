@@ -5,6 +5,7 @@
     <angular4-paystack
       [class]="'btn btn-primary m-3'"
       [email]="'mailexample@mail.com'"
+      (paymentInit)="paymentInit()"
       [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
       [class]="'btn btn-primary'"
     >
@@ -14,6 +15,7 @@
     <button
       class="btn btn-danger m-3"
       angular4-paystack
+      (paymentInit)="paymentInit()"      
       [channels]="['card', 'bank']"
       [email]="'mailexample@mail.com'"
       [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
@@ -34,6 +36,7 @@
     <angular4-paystack-embed
       angular4-paystack
       [email]="'mailexample@mail.com'"
+      (paymentInit)="paymentInit()"      
       [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
       [class]="'btn btn-primary btn-lg'" [channels]="['card']"
     ></angular4-paystack-embed>
