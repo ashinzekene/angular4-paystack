@@ -2,6 +2,15 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 3.0.0 - 15-10-20
+### Added
+  - Module with `forRoot`
+  - `paystackOptions` input
+### Removed
+  - `text` input
+### Deprecated
+ - `angular-embed` component
+
 ## 2.4.0 - 15-10-20
 ### Added
   - Upgraded to angular v8  

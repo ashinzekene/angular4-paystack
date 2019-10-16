@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaystackOptions } from 'angular4-paystack';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   public title = 'My app';
   public showEmbed = false;
+  options: PaystackOptions = {
+    amount: 50000,
+    email: 'user@mail.com',
+    ref: `${Math.ceil(Math.random() * 10e10)}`
+  };
   public results = {
     name: ''
   };
@@ -17,6 +23,10 @@ export class AppComponent implements OnInit {
 
   toggleEmbed() {
     this.showEmbed = !this.showEmbed;
+  }
+
+  paymentInit() {
+    console.log('Payment initialized');
   }
 
   paymentDone(ref: any) {

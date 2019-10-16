@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "node scripts/copy-artifacts && ng build",
-    "test": "ng test",
-    "lint": "ng lint",
+    "test": "ng test angular4-paystack",
+    "lint": "ng lint angular4-paystack",
     "e2e": "ng e2e"
   },
   "private": false,
