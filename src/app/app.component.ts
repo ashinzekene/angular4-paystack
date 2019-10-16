@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     amount: 50000,
     email: 'user@mail.com',
     ref: `${Math.ceil(Math.random() * 10e10)}`
-  }
+  };
   public results = {
     name: ''
   };
