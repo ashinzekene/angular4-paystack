@@ -1,13 +1,18 @@
-<div class="display-4 py-4 px-1 text-center bg-primary text-white">Angular4 Paystack</div>
+<div class="display-4 py-4 px-1 text-center bg-primary text-white">
+  Angular4 Paystack
+</div>
 <div class="text-center lead">{{ title }}</div>
 <div class="container">
-  <div class="paystack-buttons text-center d-md-flex d-lg-flex d-xl-flex justify-content-between">
+  <div
+    class="paystack-buttons text-center d-md-flex d-lg-flex d-xl-flex justify-content-between"
+  >
     <angular4-paystack
       [class]="'btn btn-primary m-3'"
       [email]="'mailexample@mail.com'"
       (paymentInit)="paymentInit()"
-      [amount]="'5000000'" [ref]="tRef"
-      (close)="paymentCancel()"
+      [amount]="'5000000'"
+      [ref]="tRef"
+      (onClose)="paymentCancel()"
       (callback)="paymentDone($event)"
       [class]="'btn btn-primary'"
     >
@@ -18,29 +23,37 @@
       class="btn btn-danger m-3"
       angular4-paystack
       [paystackOptions]="options"
-      (close)="paymentCancel()"
-      (paymentInit)="paymentInit()"      
+      (onClose)="paymentCancel()"
+      (paymentInit)="paymentInit()"
       (callback)="paymentDone($event)"
       [class]="'btn btn-primary btn-lg'"
     >
       Pay With Paystack Directive
     </button>
   </div>
-  <button class="btn btn-outline-dark mr-3" (click)="toggleEmbed()">Toggle embed</button>
-  <button class="btn btn-outline-dark" (click)="setRandomPaymentRef()">Set random payment Ref</button>
-  <h3>Embed {{ showEmbed ? 'visible' : 'hidden' }}</h3>
+  <button class="btn btn-outline-dark mr-3" (click)="toggleEmbed()">
+    Toggle embed
+  </button>
+  <button class="btn btn-outline-dark" (click)="setRandomPaymentRef()">
+    Set random payment Ref
+  </button>
+  <h3>Embed {{ showEmbed ? "visible" : "hidden" }}</h3>
   <div>
-    You can't have more than one payment Instance at a time. Hide paystack embed to try out
-    paystack directive and paystack component
+    You can't have more than one payment Instance at a time. Hide paystack embed
+    to try out paystack directive and paystack component
   </div>
   <h3 class="text-center my-3">Paystack Embed</h3>
   <div *ngIf="showEmbed">
     <angular4-paystack-embed
       angular4-paystack
       [email]="'mailexample@mail.com'"
-      (paymentInit)="paymentInit()"      
-      [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
-      [class]="'btn btn-primary btn-lg'" [channels]="['card']"
+      (paymentInit)="paymentInit()"
+      [amount]="'5000000'"
+      [ref]="tRef"
+      (onClose)="paymentCancel()"
+      (callback)="paymentDone($event)"
+      [class]="'btn btn-primary btn-lg'"
+      [channels]="['card']"
     ></angular4-paystack-embed>
   </div>
 </div>

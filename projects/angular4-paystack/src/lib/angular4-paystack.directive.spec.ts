@@ -1,13 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component, DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { Component, DebugElement } from "@angular/core";
+import { By } from "@angular/platform-browser";
 
-import { Angular4PaystackDirective } from './angular4-paystack.directive';
-import { Angular4PaystackService } from './angular4-paystack.service';
-import { PUBLIC_KEY_TOKEN } from './paystack-token';
+import { Angular4PaystackDirective } from "./angular4-paystack.directive";
+import { Angular4PaystackService } from "./angular4-paystack.service";
+import { PUBLIC_KEY_TOKEN } from "./paystack-token";
 
 @Component({
-  template: `<button type="text"
+  template: `<button
+    type="text"
     class="btn btn-danger m-3"
     angular4-paystack
     [channels]="['card', 'bank']"
@@ -15,52 +16,50 @@ import { PUBLIC_KEY_TOKEN } from './paystack-token';
     [amount]="'5000000'"
     [ref]="'some-random-str'"
     (paymentInit)="paymentInit()"
-    (close)="paymentCancel()"
+    (onClose)="paymentCancel()"
     (callback)="paymentDone($event)"
     [class]="'btn btn-primary btn-lg'"
   >
     Pay
-  </button>
-  `
+  </button> `,
 })
 class TestComponent {
   paymentInit() {
-    return 'initialized';
+    return "initialized";
   }
 
   paymentDone(ref: any) {
-   return 'successful';
+    return "successful";
   }
 
   paymentCancel() {
-    return 'failed';
+    return "failed";
   }
 }
 
-describe('Angular4PaystackDirective', () => {
+describe("Angular4PaystackDirective", () => {
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
   let payButton: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Angular4PaystackDirective, TestComponent ],
+      declarations: [Angular4PaystackDirective, TestComponent],
       providers: [
         Angular4PaystackService,
-        { provide: PUBLIC_KEY_TOKEN, useValue: 'public-key' }
-      ]
-    })
-    .compileComponents();
+        { provide: PUBLIC_KEY_TOKEN, useValue: "public-key" },
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    payButton = fixture.debugElement.query(By.css('button'));
+    payButton = fixture.debugElement.query(By.css("button"));
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
