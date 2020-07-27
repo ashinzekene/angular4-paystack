@@ -197,12 +197,19 @@ Then `pk_test_2` would be used instead
 
 Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
 
+Two projects exist in this repository
+- The `Angular4-Paystack` package: [`./projects/angular4-paystack`](./projects/angular4-paystack)
+- The demo: [`./src`](./src)
 
-## How can I thank you?
+### Angular4-paystack project
+- Found at `./projects/angular4-paystack/src/lib`.
+- The artifacts ([README.md](./projects/angular4-paystack/README.md), [CHANGELOG.md](./projects/angular4-paystack/CHANGELOG.md) and [LICENSE.md](./projects/angular4-paystack/LICENSE.md)) in the `./projects/angular4-paystack/` folder are overwritten on [build](https://github.com/ashinzekene/angular4-paystack/blob/master/package.json#L7)
+- Running `npm run build` on the main folder builds this project by [default](https://github.com/ashinzekene/angular4-paystack/blob/master/angular.json#L155)
 
-Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or anywhere? Spread the word!
-
-Don't forget to [follow me on twitter](https://twitter.com/ashinzekene)!
+### Demo
+- To serve this project run `npm start`/`ng serve`.
+- This project makes use of the [built package](https://github.com/ashinzekene/angular4-paystack/blob/master/tsconfig.json#L23) from the `angular4-paystack` library for quick testing and real-life debugging. So it's **important** to initially run `npm run build`/`ng build` before serving this project
+- This project is also served on github pages at https://ashinzekene.github.io/angular4-paystack/
 
 Thanks!
 Ashinze Ekene.
