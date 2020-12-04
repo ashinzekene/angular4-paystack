@@ -99,7 +99,7 @@ Also you can use the `paystackOptions` object like so:
   <button
     angular4-paystack
     [paystackOptions]="options"
-    (paymentInit)="paymentCancel()"
+    (paymentInit)="paymentInit()"
     (close)="paymentCancel()"
     (callback)="paymentDone($event)"
   >
