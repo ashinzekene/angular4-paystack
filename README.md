@@ -38,7 +38,7 @@ There are two available options
       [ref]="reference"
       [channels]="['bank']"
       [class]="'btn btn-primary'"
-      (close)="paymentCancel()"
+      (onClose)="paymentCancel()"
       (callback)="paymentDone($event)"
     >
       Pay with Paystack
@@ -55,7 +55,7 @@ There are two available options
     [ref]="reference"
     [class]="'btn btn-primary'"
     (paymentInit)="paymentInit()"
-    (close)="paymentCancel()"
+    (onClose)="paymentCancel()"
     (callback)="paymentDone($event)"
   >
     Pay with Paystack
@@ -100,7 +100,7 @@ Also you can use the `paystackOptions` object like so:
     angular4-paystack
     [paystackOptions]="options"
     (paymentInit)="paymentInit()"
-    (close)="paymentCancel()"
+    (onClose)="paymentCancel()"
     (callback)="paymentDone($event)"
   >
     Pay with Paystack
@@ -157,7 +157,7 @@ and this in your component
     [ref]="reference"
     [class]="'btn btn-primary'"
     (paymentInit)="paymentInit()"
-    (close)="paymentCancel()"
+    (onClose)="paymentCancel()"
     (callback)="paymentDone($event)"
   >
     Pay with Paystack
