@@ -7,7 +7,7 @@
       [email]="'mailexample@mail.com'"
       (paymentInit)="paymentInit()"
       [amount]="'5000000'" [ref]="tRef"
-      (close)="paymentCancel()"
+      (onClose)="paymentCancel()"
       (callback)="paymentDone($event)"
       [class]="'btn btn-primary'"
     >
@@ -18,7 +18,7 @@
       class="btn btn-danger m-3"
       angular4-paystack
       [paystackOptions]="options"
-      (close)="paymentCancel()"
+      (onClose)="paymentCancel()"
       (paymentInit)="paymentInit()"      
       (callback)="paymentDone($event)"
       [class]="'btn btn-primary btn-lg'"
@@ -39,7 +39,7 @@
       angular4-paystack
       [email]="'mailexample@mail.com'"
       (paymentInit)="paymentInit()"      
-      [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
+      [amount]="'5000000'" [ref]="tRef" (onClose)="paymentCancel()" (callback)="paymentDone($event)"
       [class]="'btn btn-primary btn-lg'" [channels]="['card']"
     ></angular4-paystack-embed>
   </div>
