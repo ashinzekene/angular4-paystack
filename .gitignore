@@ -24,23 +24,15 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
-<<<<<<< HEAD
-=======
 process.js
 /lib
 
->>>>>>> d933e757bcb1beb3fe18d957c0e6a4806707b696
 # misc
 /.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
 npm-debug.log
-<<<<<<< HEAD
-yarn-error.log
-testem.log
-/typings
-=======
 testem.log
 /typings
 yarn-error.log
@@ -48,12 +40,8 @@ yarn-error.log
 # e2e
 /e2e/*.js
 /e2e/*.map
->>>>>>> d933e757bcb1beb3fe18d957c0e6a4806707b696
 
 # System Files
 .DS_Store
 Thumbs.db
-<<<<<<< HEAD
-=======
 /examples/src/app/testing/*
->>>>>>> d933e757bcb1beb3fe18d957c0e6a4806707b696
