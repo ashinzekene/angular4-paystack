@@ -70,10 +70,12 @@ export class Angular4PaystackDirective {
     this._paystackOptions = this.paystackService.getPaystackOptions(obj);
     this._paystackOptions.onClose = () => {
       if (this.onClose.observers.length) {
+        this.isPaying = false;
         this.onClose.emit();
       }
     };
     this._paystackOptions.callback = (...response) => {
+      this.isPaying = false;
       this.callback.emit(...response);
     };
   }
