@@ -14,7 +14,7 @@ import { PUBLIC_KEY_TOKEN } from './paystack-token';
   providers: [],
 })
 export class Angular4PaystackModule {
-  static forRoot(token: string): ModuleWithProviders {
+  static forRoot(token: string): ModuleWithProviders<Angular4PaystackModule> {
     return {
       ngModule: Angular4PaystackModule,
       providers: [
