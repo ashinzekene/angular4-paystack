@@ -2,6 +2,11 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 3.0.1 - 12-07-21
+### Fixed
+  - Schematic change to ModuleWithProviders: [here](https://angular.io/guide/migration-module-with-providers)
+  - Fixed issue with re-opening payment modal after closing
+
 ## 3.0.0 - 15-10-20
 ### Added
   - Module with `forRoot`
