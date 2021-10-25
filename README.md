@@ -1,6 +1,8 @@
 # ANGULAR4-PAYSTACK
 [![Node CI](https://github.com/ashinzekene/angular4-paystack/actions/workflows/nodejs.yml/badge.svg)](https://github.com/ashinzekene/angular4-paystack/actions/workflows/nodejs.yml)
 
+https://ashinzekene.github.io/angular4-paystack/  
+
 > This is an angular module that abstracts the complexity of making paystack payments with Angular2+.
 
 ## USAGE

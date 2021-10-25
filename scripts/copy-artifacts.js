@@ -1,7 +1,7 @@
 const fs = require("fs")
 const path = require("path")
 
-const artifacts = ["README.md", "CHANGELOG.md", "LICENSE.md"]
+const artifacts = ["README.md", "CHANGELOG.md", "LICENSE.md", ".gitignore", ".travis.yml"]
 
 function copyArtifact(file) {
   fs.copyFile(
