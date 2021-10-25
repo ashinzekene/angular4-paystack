@@ -2,9 +2,13 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 3.0.2 - 18-08-21
+### Fixed
+  - Make angular v8 - v12 peer dependencies
+
 ## 3.0.1 - 12-07-21
 ### Fixed
-  - Schematic change to ModuleWithProviders: [here](https://angular.io/guide/migration-module-with-providers)
+  - Schematic change to ModuleWithProviders: [here](https://angular.io/guide/migration-module-with-providers). Thanks @alexnoise79
   - Fixed issue with re-opening payment modal after closing
 
 ## 3.0.0 - 15-10-20
