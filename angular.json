@@ -124,7 +124,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/angular4-paystack/tsconfig.lib.json",
             "project": "projects/angular4-paystack/ng-package.json"

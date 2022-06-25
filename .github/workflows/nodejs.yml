@@ -20,7 +20,6 @@ jobs:
     - name: npm ci, lint, build, and test
       run: |
         npm ci
-        npx ng lint
         npx ng build
         npx ng build angular4-paystack-lib
         npx ng test angular4-paystack -- --no-watch --no-progress --browsers=ChromeHeadlessCI
