@@ -22,9 +22,9 @@ jobs:
         npm ci
     - name: npm build lib
       run: |
-        npx ng build angular4-paystack-lib
+        npx ng build
     - name: npm build
       run: |
-        npx ng build
+        npx ng build angular4-paystack-lib
       env:
         CI: true
