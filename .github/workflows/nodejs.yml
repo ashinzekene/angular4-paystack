@@ -17,11 +17,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm ci, lint, build, and test
+    - name: npm ci
       run: |
         npm ci
+    - name: npm build lib
+      run: |
         npx ng build angular4-paystack-lib
-        # npx ng build
-        # npx ng test angular4-paystack -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+    - name: npm build
+      run: |
+        npx ng build
       env:
         CI: true
