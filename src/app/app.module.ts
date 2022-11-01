@@ -10,7 +10,7 @@ import { Angular4PaystackModule } from 'angular4-paystack';
   ],
   imports: [
     BrowserModule,
-    Angular4PaystackModule.forRoot('pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e')
+    Angular4PaystackModule.forRoot('pk_test_24673c9637a1bf06e5fb6eb989012747183eb2ae')
   ],
   providers: [],
   bootstrap: [AppComponent]

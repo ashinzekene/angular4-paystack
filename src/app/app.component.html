@@ -6,7 +6,8 @@
       [class]="'btn btn-primary m-3'"
       [email]="'mailexample@mail.com'"
       (paymentInit)="paymentInit()"
-      [amount]="'5000000'"
+      [amount]="'50000'"
+      [split_code]="'SPL_K0t6TE0Fmm'"
       [ref]="tRef"
       (onClose)="paymentCancel()"
       (callback)="paymentDone($event)"
@@ -39,6 +40,7 @@
     <angular4-paystack-embed
       angular4-paystack
       [email]="'mailexample@mail.com'"
+      [split_code]="'SPL_K0t6TE0Fmm'"
       (paymentInit)="paymentInit()"      
       [amount]="'5000000'" [ref]="tRef" (onClose)="paymentCancel()" (callback)="paymentDone($event)"
       [class]="'btn btn-primary btn-lg'" [channels]="['card']"

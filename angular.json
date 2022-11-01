@@ -152,5 +152,8 @@
         }
       }
     }},
-  "defaultProject": "angular4-paystack"
+  "defaultProject": "angular4-paystack",
+  "cli": {
+    "analytics": false
+  }
 }
