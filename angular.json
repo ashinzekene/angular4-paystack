@@ -93,10 +93,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular4-paystack-lib:build:production"
+              "browserTarget": "angular4-paystack-lib:build-docs:production"
             },
             "development": {
-              "browserTarget": "angular4-paystack-lib:build:development"
+              "browserTarget": "angular4-paystack-lib:build-docs:development"
             }
           },
           "defaultConfiguration": "development"
