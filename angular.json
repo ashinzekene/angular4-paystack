@@ -3,6 +3,39 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "angular4-paystack": {
+      "projectType": "library",
+      "root": "projects/angular4-paystack",
+      "sourceRoot": "projects/angular4-paystack/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular4-paystack/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular4-paystack/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular4-paystack/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/angular4-paystack/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
     "angular4-paystack-lib": {
       "projectType": "application",
       "schematics": {},
@@ -10,7 +43,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": {
+        "build-docs": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/angular4-paystack-lib",
@@ -74,7 +107,7 @@
             "browserTarget": "angular4-paystack-lib:build"
           }
         },
-        "test": {
+        "test-docs": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
