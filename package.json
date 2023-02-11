@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "node scripts/copy-artifacts && ng build",
     "build-docs": "ng run angular4-paystack-lib:build-docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
