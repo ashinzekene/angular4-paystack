@@ -25,4 +25,4 @@ jobs:
       - run: npm run build
       - run: npm run build-docs
       - run: npm t
-      - run: npm test-docs
+      - run: npm run test-docs
