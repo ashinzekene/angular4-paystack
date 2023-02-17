@@ -5,7 +5,6 @@ const readline = require('readline').createInterface({
   output: process.stdout
 });
 
-// get args from command line
 (async function run() {
   const args = process.argv.slice(2)
 
@@ -27,7 +26,7 @@ const readline = require('readline').createInterface({
   }
 
   runNpmVersionPatch(version, args)
-  // console.log(execSync(`cd dist/angular4-paystack && npm publish`).toString())
+  console.log(execSync(`cd dist/angular4-paystack && npm publish`).toString())
 })()
 
 
