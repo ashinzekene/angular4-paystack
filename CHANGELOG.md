@@ -2,6 +2,11 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 3.1.0 - 17-02-23
+### Added
+  - Added support for angular 15. Anguler versions 8 - 15 now supported
+  - Moved repo to angular 15
+
 ## 3.0.2 - 18-08-21
 ### Fixed
   - Make angular v8 - v12 peer dependencies
