@@ -49,6 +49,7 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/angular4-paystack/",
             "polyfills": [
               "zone.js"
             ],
