@@ -11,10 +11,9 @@ const readline = require('readline').createInterface({
   const version = validateVersion(args)
   if (!version) {
     console.log(`Please specify a valid version
-    Usage: npm run publish [major|minor|patch]
+    Usage: npm run p -- [major|minor|patch]
     `)
     process.exit(1);
-    return
   }
   console.log(`Publishing version: ${version.toUpperCase()}`)
 
@@ -22,10 +21,10 @@ const readline = require('readline').createInterface({
   if (!hasChangelog) {
     console.log("Please update the changelog")
     process.exit(1);
-    return
   }
 
   runNpmVersionPatch(version, args)
+  console.log(execSync(`npm run build`).toString())
   console.log(execSync(`cd dist/angular4-paystack && npm publish`).toString())
 })()
 
@@ -45,12 +44,12 @@ function validateChangeLog() {
 }
 
 function validateVersion(args) {
-  const version = args[0]?.toLocaleLowerCase()
+  const version = args[0]?.toLocaleLowerCase()?.trim()
   const versions = ["major", "minor", "patch"]
   if (version && !versions.includes(version)) {
     return ""
   }
-  return versions[version] || "patch"
+  return version || "patch"
 }
 
 function runNpmVersionPatch(version, args) {
