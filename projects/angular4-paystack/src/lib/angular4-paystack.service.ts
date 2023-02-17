@@ -15,7 +15,7 @@ declare var window: MyWindow;
 export class Angular4PaystackService {
   constructor(@Inject(PUBLIC_KEY_TOKEN) private token: string) {}
 
-  loadScript(): Promise<void> {
+  public loadScript(): Promise<void> {
     return new Promise(resolve => {
       if (window.PaystackPop && typeof window.PaystackPop.setup === 'function') {
         resolve();

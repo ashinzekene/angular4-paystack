@@ -53,6 +53,7 @@ export class Angular4PaystackEmbedComponent implements OnInit {
     }
     const payment = window.PaystackPop.setup(this._paystackOptions);
     payment.openIframe();
+    return '';
   }
 
   valdateInput(obj: PaystackOptions) {

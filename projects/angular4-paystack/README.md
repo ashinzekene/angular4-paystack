@@ -1,5 +1,9 @@
 # ANGULAR4-PAYSTACK
 
+[![Node CI](https://github.com/ashinzekene/angular4-paystack/actions/workflows/nodejs.yml/badge.svg)](https://github.com/ashinzekene/angular4-paystack/actions/workflows/nodejs.yml)
+
+https://ashinzekene.github.io/angular4-paystack/ 
+
 > This is an angular module that abstracts the complexity of making paystack payments with Angular2+.
 
 ## USAGE
@@ -191,9 +195,9 @@ Then `pk_test_2` would be used instead
 |  `bearer`             | `string`       | false               |  ""                 | Who bears Paystack charges? account or subaccount
 |  `channels`           | `array`         | false              | undefined  | Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
 
-> For more information checkout [paystack's documentation](https://developers.paystack.co/docs/paystack-inline#section-working-with-paystack-inline)
+> For more information checkout [paystack's documentation](https://paystack.com/docs/payments/accept-payments/)
 
-## Contributing
+## CONTRIBUTING
 
 Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
 
@@ -214,6 +218,6 @@ Two projects exist in this repository
 Thanks!
 Ashinze Ekene.
 
-## License
+## LICENSE
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

@@ -110,7 +110,7 @@ describe('Angular4PaystackEmbedComponent', () => {
     const error = await component.pay();
 
     fixture.detectChanges();
-    expect(error).toBeUndefined();
+    expect(error).toBe('');
     expect(component.paymentInit.emit).toHaveBeenCalled();
   });
 
@@ -124,7 +124,7 @@ describe('Angular4PaystackEmbedComponent', () => {
     const error = await component.pay();
 
     fixture.detectChanges();
-    expect(error).toBeUndefined();
+    expect(error).toBe('');
     expect(component.paymentInit.emit).toHaveBeenCalled();
   });
 });

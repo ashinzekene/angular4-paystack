@@ -7,7 +7,7 @@ import { PaystackOptions } from 'angular4-paystack';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public title = 'My app';
+  public title = 'app';
   public showEmbed = false;
   options: PaystackOptions = {
     amount: 50000,

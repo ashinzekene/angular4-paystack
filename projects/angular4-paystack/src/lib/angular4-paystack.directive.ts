@@ -57,6 +57,7 @@ export class Angular4PaystackDirective {
     const payment = window.PaystackPop.setup(this._paystackOptions);
     payment.openIframe();
     this.isPaying = true;
+    return '';
   }
 
   valdateInput(obj: PaystackOptions) {
