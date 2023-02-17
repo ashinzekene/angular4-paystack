@@ -10,7 +10,8 @@
     "test": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
     "test-docs": "ng run angular4-paystack-lib:test-docs --no-watch --no-progress --browsers=ChromeHeadless",
     "test:watch": "ng test",
-    "test-docs:watch": "ng run angular4-paystack-lib:test-docs"
+    "test-docs:watch": "ng run angular4-paystack-lib:test-docs",
+    "p": "node scripts/publish"
   },
   "private": false,
   "dependencies": {
