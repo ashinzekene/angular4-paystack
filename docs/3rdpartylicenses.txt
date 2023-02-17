@@ -8,6 +8,7 @@ MIT
 MIT
 
 angular4-paystack
+MIT
 
 rxjs
 Apache-2.0
