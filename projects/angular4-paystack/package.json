@@ -1,6 +1,6 @@
 {
   "name": "angular4-paystack",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "peerDependencies": {
     "@angular/common": "8.0.0 - 15",
     "@angular/core": "8.0.0 - 15"
