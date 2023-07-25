@@ -2,6 +2,10 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 3.1.2 - 25-07-23
+### Fixed
+  - Peer dependency for angular 15 support
+
 ## 3.1.1 - 12-03-23
 ### Fixed
   - Peer dependency for angular 15 support

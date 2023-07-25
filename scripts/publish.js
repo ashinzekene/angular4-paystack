@@ -11,7 +11,7 @@ const readline = require('readline').createInterface({
   const version = validateVersion(args)
   if (!version) {
     console.log(`Please specify a valid version
-    Usage: npm run p -- [major|minor|patch]
+    Usage: npm run p -- [major|minor|patch] {message?}
     `)
     process.exit(1);
   }
