@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   options: PaystackOptions = {
     amount: 50000,
     email: 'user@mail.com',
+    split_code: 'SPL_nZXNafVgCd',
     ref: `${Math.ceil(Math.random() * 10e10)}`
   };
   public results = {

@@ -24,6 +24,7 @@ export class Angular4PaystackEmbedComponent implements OnInit {
   @Input() plan: string;
   @Input() quantity: string;
   @Input() subaccount: string;
+  @Input() split_code: string;
   @Input() transaction_charge: number; // tslint:disable-line
   @Input() bearer: string;
   @Input() paystackOptions: PaystackOptions;

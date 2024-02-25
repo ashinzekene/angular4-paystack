@@ -51,6 +51,10 @@ export interface PaystackOptions {
    * Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
    */
   channels?: string[];
+  /**
+   * Used to apply multiple Split on Payments
+   */
+  split_code?: string;
 }
 
 export interface PrivatePaystackOptions extends PaystackOptions {
