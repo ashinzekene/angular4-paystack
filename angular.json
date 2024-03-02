@@ -94,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular4-paystack-lib:build-docs:production"
+              "buildTarget": "angular4-paystack-lib:build-docs:production"
             },
             "development": {
-              "browserTarget": "angular4-paystack-lib:build-docs:development"
+              "buildTarget": "angular4-paystack-lib:build-docs:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,7 +105,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular4-paystack-lib:build"
+            "buildTarget": "angular4-paystack-lib:build"
           }
         },
         "test-docs": {
