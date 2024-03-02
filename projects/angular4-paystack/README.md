@@ -58,6 +58,7 @@ There are two available options
     [amount]="5000000"
     [ref]="reference"
     [class]="'btn btn-primary'"
+    [split_code]="'SPL_A7t5J02390Fmm'"
     (paymentInit)="paymentInit()"
     (onClose)="paymentCancel()"
     (callback)="paymentDone($event)"
@@ -172,28 +173,29 @@ Then `pk_test_2` would be used instead
 
 ## OPTIONS
 
-|Name                   | Type           | Required            | Default Value       | Description         |
-|-----------------------|----------------|---------------------|---------------------|---------------------|
-|  `amount `            | `number`       | true                |  undefined          | Amount to withdraw (in kobo for NGN)
-|  `email `             | `string`       | true                |  undefined          | The customer's email address.
-|  `key`                | `string`       | true                |  undefined          | Your pubic Key from Paystack. Use test key for test mode and live key for live mode
-|  `ref`                | `string`       | true                |  undefined          | Unique case sensitive transaction reference. Only -,., = and alphanumeric characters allowed.
-|  `callback`           | `function`     | true                |  undefined          | A function called when transaction is successful. Returns an object containing unique reference
-|  `metadata`           | `object`       | false               |  {}                 | custom details
-|  `class`              | `string`       | false               |  undefined          | A string of classes to add to the component (not available for **inline embed**)
-|  `style`              | `object`       | false               |  undefined          | CSS stylings, eg ```{fontColor: 'red'}```  (not available for **inline embed**)
-|  `text`               | `object`       | false               |  undefined          | Text output of the component
-|  `currency`           | `string`       | false               |  "NGN"              | Transaction currency
-|  `plan`               | `string`       | false               |  ""                 | If transaction is to create a subscription to a predefined plan, provide plan code here.
-|  `quantity`           | `string`       | false               |  ""                 | Used to apply a multiple to the amount returned by the plan code above.
-|  `paystackOptions`     | `object`     | false               |  undefined          | An object containing the paystack options above. **NOTE:** The function listeners eg `callback`, `paymentInit` should not be added here
-|  `paymentInit`        | `function`     | false               |  undefined          | A function called when the payment is about to begin
-|  `onClose`            | `function`     | false               |  undefined          | A function called if the customer closes the payment window
+|Name                   | Type           | Required                  | Default Value       | Description         |
+|-----------------------|----------------|---------------------------|---------------------|---------------------|
+|  `amount `            | `number`       | true                      |  undefined          | Amount to withdraw (in kobo for NGN)
+|  `email `             | `string`       | true                      |  undefined          | The customer's email address.
+|  `key`                | `string`       | true                      |  undefined          | Your pubic Key from Paystack. Use test key for test mode and live key for live mode
+|  `ref`                | `string`       | true                      |  undefined          | Unique case sensitive transaction reference. Only -,., = and alphanumeric characters allowed.
+|  `callback`           | `function`     | true                      |  undefined          | A function called when transaction is successful. Returns an object containing unique reference
+|  `metadata`           | `object`       | false                     |  {}                 | custom details
+|  `class`              | `string`       | false                     |  undefined          | A string of classes to add to the component (not available for **inline embed**)
+|  `style`              | `object`       | false                     |  undefined          | CSS stylings, eg ```{fontColor: 'red'}```  (not available for **inline embed**)
+|  `text`               | `object`       | false                     |  undefined          | Text output of the component
+|  `currency`           | `string`       | false                     |  "NGN"              | Transaction currency
+|  `plan`               | `string`       | false                     |  ""                 | If transaction is to create a subscription to a predefined plan, provide plan code here.
+|  `quantity`           | `string`       | false                     |  ""                 | Used to apply a multiple to the amount returned by the plan code above.
+|  `paystackOptions`     | `object`     | false                      |  undefined          | An object containing the paystack options above. **NOTE:** The function listeners eg `callback`, `paymentInit` should not be added here
+|  `paymentInit`        | `function`     | false                     |  undefined          | A function called when the payment is about to begin
+|  `onClose`            | `function`     | false                     |  undefined          | A function called if the customer closes the payment window
 **For Split Payments** |
-|  `subaccount`         | `string`       | false               |  ""                 | The code for the subaccount that owns the payment.
-|  `transaction_charge` | `number`       | false               |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
-|  `bearer`             | `string`       | false               |  ""                 | Who bears Paystack charges? account or subaccount
-|  `channels`           | `array`         | false              | undefined  | Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
+|  `spplit_code`        | `string`       | true (for split payment)  |  ""                 | The split code of the transaction split. (e.g. `SPL_98WF13Eb3w`)
+|  `subaccount`         | `string`       | false                     |  ""                 | The code for the subaccount that owns the payment.
+|  `transaction_charge` | `number`       | false                     |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
+|  `bearer`             | `string`       | false                     |  ""                 | Who bears Paystack charges? account or subaccount
+|  `channels`           | `array`        | false                     | undefined  | Send 'card' or 'bank' or 'card','bank' as an array to specify what options to show the user paying
 
 > For more information checkout [paystack's documentation](https://paystack.com/docs/payments/accept-payments/)
 
