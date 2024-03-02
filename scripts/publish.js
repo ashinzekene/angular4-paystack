@@ -9,6 +9,7 @@ const readline = require('readline').createInterface({
   const args = process.argv.slice(2)
 
   const version = validateVersion(args)
+  const useForce = shouldUseForce(args)
   if (!version) {
     console.log(`Please specify a valid version
     Usage: npm run p -- [major|minor|patch] {message?}
@@ -17,29 +18,46 @@ const readline = require('readline').createInterface({
   }
   console.log(`Publishing version: ${version.toUpperCase()}`)
 
-  const hasChangelog = await validateChangeLog()
-  if (!hasChangelog) {
-    console.log("Please update the changelog")
+  try {
+    await validateChangeLog(useForce)
+    console.log("CHANGELOG update validated")
+  } catch (error) {
+    console.log(error)
     process.exit(1);
   }
 
   runNpmVersionPatch(version, args)
   console.log(execSync(`npm run build`).toString())
   console.log(execSync(`cd dist/angular4-paystack && npm publish`).toString())
+  console.log(execSync(`cd ../..`).toString())
+  process.exit(0);
 })()
 
 
-function validateChangeLog() {
-  return new Promise((resolve) => {
-    readline.question('HAS CHANGELOG BEEN UPDATED?\n', response => {
-      if (response.toLocaleLowerCase() === "yes" || response.toLocaleLowerCase() === "y") {
-        readline.close()
-        resolve(true)
-      } else {
-        readline.close()
-        resolve(false)
+function validateChangeLog(force = false) {
+  const modifiedFiles = execSync("git ls-files --modified");
+  const filesList = modifiedFiles.toString().split("\n");
+  return new Promise((resolve, reject) => {
+    if (force) {
+      readline.question('HAS CHANGELOG BEEN UPDATED?\n', response => {
+        if (response.toLocaleLowerCase() === "yes" || response.toLocaleLowerCase() === "y") {
+          readline.close()
+          resolve(true)
+        } else {
+          readline.close()
+          reject("Please update the changelog")
+        }
+      });
+    } else {
+      if (filesList?.includes("projects/angular4-paystack/CHANGELOG.md")) {
+        reject("Only CHANGELOG.md in root should be modified.")
       }
-    });
+      if (filesList?.includes("CHANGELOG.md")) {
+        resolve(true);
+        return;
+      }
+      reject("CHANGELOG.md not modified. Please update the changelog before publishing.");
+    }
   })
 }
 
@@ -58,3 +76,8 @@ function runNpmVersionPatch(version, args) {
     `cd projects/angular4-paystack && npm version ${version}${message ? ` -m "${message}"` : ""}`);
   console.log(returnMessage.toString())
 }
+
+function shouldUseForce(args) {
+  return args.includes("-f") || args.includes("--force")
+}
+
