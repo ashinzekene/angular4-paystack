@@ -30,6 +30,7 @@ const readline = require('readline').createInterface({
   console.log(execSync(`npm run build`).toString())
   console.log(execSync(`cd dist/angular4-paystack && npm publish`).toString())
   console.log(execSync(`cd ../..`).toString())
+  process.exit(0);
 })()
 
 
