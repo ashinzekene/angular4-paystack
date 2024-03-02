@@ -2,8 +2,8 @@
   "name": "angular4-paystack",
   "version": "3.1.2",
   "peerDependencies": {
-    "@angular/common": "8.0.0 - ^16",
-    "@angular/core": "8.0.0 - ^16"
+    "@angular/common": "8.0.0 - ^17",
+    "@angular/core": "8.0.0 - ^17"
   },
   "repository": {
     "type": "git",
