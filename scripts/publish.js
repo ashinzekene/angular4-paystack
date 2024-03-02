@@ -53,6 +53,7 @@ function validateChangeLog(force = false) {
       }
       if (filesList?.includes("CHANGELOG.md")) {
         resolve(true);
+        return;
       }
       reject("CHANGELOG.md not modified. Please update the changelog before publishing.");
     }
