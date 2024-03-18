@@ -191,7 +191,7 @@ Then `pk_test_2` would be used instead
 |  `paymentInit`        | `function`     | false                     |  undefined          | A function called when the payment is about to begin
 |  `onClose`            | `function`     | false                     |  undefined          | A function called if the customer closes the payment window
 **For Split Payments** |
-|  `spplit_code`        | `string`       | true (for split payment)  |  ""                 | The split code of the transaction split. (e.g. `SPL_98WF13Eb3w`)
+|  `split_code`         | `string`       | true (for split payment)  |  ""                 | The split code of the transaction split. (e.g. `SPL_98WF13Eb3w`)
 |  `subaccount`         | `string`       | false                     |  ""                 | The code for the subaccount that owns the payment.
 |  `transaction_charge` | `number`       | false                     |  0                  |  A flat fee to charge the subaccount for this transaction, in kobo.
 |  `bearer`             | `string`       | false                     |  ""                 | Who bears Paystack charges? account or subaccount
