@@ -2,6 +2,11 @@
 
 All notable changes to `angular4-paystack` will be documented in this file
 
+## 3.1.4 - 18-03-24
+### Fixed
+  - Fixed peer dependencies version issues
+  - Fix `split_code` spelling in documentation
+
 ## 3.1.3 - 02-03-24
 ### Fixed
   - Peer dependency update for angular 17 support
