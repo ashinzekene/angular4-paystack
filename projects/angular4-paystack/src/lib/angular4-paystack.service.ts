@@ -34,7 +34,7 @@ export class Angular4PaystackService {
 
   checkInput(obj: Partial<PaystackOptions>): string {
     if (!obj.key && !this.token) {
-      return 'ANGULAR-PAYSTACK: Please insert a your public key';
+      return 'ANGULAR-PAYSTACK: Please insert your public key';
     }
     if (!obj.email) {
       return 'ANGULAR-PAYSTACK: Paystack email cannot be empty';

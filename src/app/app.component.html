@@ -11,19 +11,18 @@
       [ref]="tRef"
       (onClose)="paymentCancel()"
       (callback)="paymentDone($event)"
-      [class]="'btn btn-primary'"
+      [class]="'btn btn-primary m-3'"
     >
       Pay With Paystack component
     </angular4-paystack>
 
     <button
-      class="btn btn-danger m-3"
       angular4-paystack
       [paystackOptions]="options"
       (onClose)="paymentCancel()"
       (paymentInit)="paymentInit()"      
       (callback)="paymentDone($event)"
-      [class]="'btn btn-primary btn-lg'"
+      [class]="'btn btn-primary btn-lg m-3'"
     >
       Pay With Paystack Directive
     </button>

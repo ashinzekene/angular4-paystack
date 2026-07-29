@@ -26,7 +26,6 @@ export class Angular4PaystackDirective {
   @Input() split_code: string;
   @Input() transaction_charge: number; // tslint:disable-line
   @Input() bearer: string;
-  @Input() class: string;
   @Input() style: object;
   @Input() paystackOptions: PaystackOptions;
   @Output() paymentInit: EventEmitter<any> = new EventEmitter<any>(); // tslint:disable-line

@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { PaystackOptions } from 'angular4-paystack';
+import { Angular4PaystackModule, PaystackOptions } from 'angular4-paystack';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports: [CommonModule, Angular4PaystackModule]
 })
 export class AppComponent implements OnInit {
   public title = 'app';
@@ -14,7 +16,7 @@ export class AppComponent implements OnInit {
     email: 'user@mail.com',
     split_code: 'SPL_nZXNafVgCd',
     ref: `${Math.ceil(Math.random() * 10e10)}`
-  };
+  };  
   public results = {
     name: ''
   };
