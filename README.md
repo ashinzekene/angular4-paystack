@@ -14,6 +14,7 @@ npm install --save angular4-paystack
 ```
 
 ### 2. Import the module
+#### For NgModule components:
 In your `app.module.ts` or any module where the component or directive would be used like so:
 
 ```ts
@@ -29,6 +30,27 @@ import { Angular4PaystackModule } from 'angular4-paystack';
 })
 
 export class AppModule {}
+```
+
+#### For standalone components:
+Import the providers into your global app config:
+
+```ts
+bootstrapApplication(AppComponent, {
+  importProvidersFrom(Angular4PaystackModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'))
+})
+  .catch((err) => console.error(err));
+```
+
+And then import the directives when needed in your component:
+```ts
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [Angular4PaystackModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
 ```
 
 ### 3. Implement in your project
