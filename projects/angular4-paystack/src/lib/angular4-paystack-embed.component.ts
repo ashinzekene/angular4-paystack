@@ -35,7 +35,7 @@ export class Angular4PaystackEmbedComponent implements OnInit {
 
   constructor(private paystackService: Angular4PaystackService) {}
 
-  async pay() {
+  public async pay() {
     let errorText = '';
     if (this.paystackOptions && Object.keys(this.paystackOptions).length >= 2) {
       errorText = this.valdateInput(this.paystackOptions);
@@ -57,14 +57,14 @@ export class Angular4PaystackEmbedComponent implements OnInit {
     return '';
   }
 
-  valdateInput(obj: PaystackOptions) {
+  private valdateInput(obj: PaystackOptions) {
     if (!this.callback.observers.length) {
       return 'ANGULAR-PAYSTACK: Insert a callback output like so (callback)=\'PaymentComplete($event)\' to check payment status';
     }
     return this.paystackService.checkInput(obj);
   }
 
-  generateOptions(obj: PaystackOptions) {
+  private generateOptions(obj: PaystackOptions) {
     this._paystackOptions = this.paystackService.getPaystackOptions(obj);
     this._paystackOptions.onClose = () => {
       if (this.onClose.observers.length) {
@@ -76,7 +76,7 @@ export class Angular4PaystackEmbedComponent implements OnInit {
     };
   }
 
-  async ngOnInit() {
+  public async ngOnInit() {
     console.error(
       'ANGULAR-PAYSTACK: The paystack embed option is deprecated. Please use the paystack component or directive'
     );
